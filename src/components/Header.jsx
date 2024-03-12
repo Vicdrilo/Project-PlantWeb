@@ -46,7 +46,7 @@ export function Header() {
             </li>
           </NavLink>
           <NavLink
-            to="materiales"
+            to="matirials"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">

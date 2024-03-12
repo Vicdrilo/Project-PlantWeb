@@ -10,6 +10,18 @@ export function MainContent({ type }) {
     if (type === "fitoteca") {
       return <Fitoteca />;
     }
+
+    if (type === "matirials") {
+      return <Fitoteca />;
+    }
+
+    if (type === "advice") {
+      return <Fitoteca />;
+    }
+
+    if (type === "forum") {
+      return <Fitoteca />;
+    }
   };
   return <>{content()}</>;
 }
