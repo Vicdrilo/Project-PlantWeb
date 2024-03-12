@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Login.css";
 
 export function Login() {
@@ -26,9 +27,9 @@ export function Login() {
           </a>
         </div>
         <div className="no-account">
-          <a href="#" className="bg-[#013613] rounded-full w-full">
+          <Link to="inicio" className="bg-[#013613] rounded-full w-full">
             Continue with no account
-          </a>
+          </Link>
         </div>
       </div>
     </div>

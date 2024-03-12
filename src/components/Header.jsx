@@ -1,4 +1,5 @@
 import "../styles/Header.css";
+import { Outlet } from "react-router-dom";
 
 export function Header() {
   return (
@@ -7,13 +8,20 @@ export function Header() {
         <h1 className="satisfy-regular text-white">Planting a pine</h1>
       </div>
       <div className="navbar bg-white">
-        <ul className="ul">
-          <li className="nav-btn hover:bg-fondo">Fitoteca</li>
-          <li className="nav-btn hover:bg-fondo">Materiales</li>
-          <li className="nav-btn hover:bg-fondo">Consejos</li>
-          <li className="nav-btn hover:bg-fondo">Foro</li>
+        <ul className="ul list-none">
+          <li className="nav-btn hover:bg-fondo border-2 border-white">
+            Fitoteca
+          </li>
+          <li className="nav-btn hover:bg-fondo border-2 border-white">
+            Materiales
+          </li>
+          <li className="nav-btn hover:bg-fondo border-2 border-white">
+            Consejos
+          </li>
+          <li className="nav-btn hover:bg-fondo border-2 border-white">Foro</li>
         </ul>
       </div>
+      <Outlet />
     </>
   );
 }
