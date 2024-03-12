@@ -12,6 +12,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/" element={<Header />}>
             <Route path="inicio" element={<MainContent type="inicio" />} />
+            <Route path="fitoteca" element={<MainContent type="fitoteca" />} />
           </Route>
 
           {/* <Route element={<PrivateRoutes />}>

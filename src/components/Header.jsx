@@ -1,5 +1,5 @@
 import "../styles/Header.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 export function Header() {
   return (
@@ -13,18 +13,70 @@ export function Header() {
       </div>
       <div className="navbar bg-white">
         <ul className="ul list-none flex flex-row justify-center w-full">
-          <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
-            Fitoteca
-          </li>
-          <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
-            Materiales
-          </li>
-          <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
-            Consejos
-          </li>
-          <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
-            Foro
-          </li>
+          <Link to="fitoteca">
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Fitoteca
+            </li>
+          </Link>
+          <Link to="fitoteca">
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Materiales
+            </li>
+          </Link>
+          <Link to="advice">
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Consejos
+            </li>
+          </Link>
+          <Link to="forum">
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Foro
+            </li>
+          </Link>
+        </ul>
+      </div>
+      <div className="navbar bg-white">
+        <ul className="ul list-none flex flex-row justify-center w-full">
+          <NavLink
+            to="fitoteca"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Fitoteca
+            </li>
+          </NavLink>
+          <NavLink
+            to="fitoteca"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Materiales
+            </li>
+          </NavLink>
+          <NavLink
+            to="advice"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Consejos
+            </li>
+          </NavLink>
+          <NavLink
+            to="forum"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-center w-[150px] p-2">
+              Foro
+            </li>
+          </NavLink>
         </ul>
       </div>
       <div>
