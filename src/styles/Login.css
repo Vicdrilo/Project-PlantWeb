@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
 }
-body {
+.home-container {
   display: flex;
   justify-content: center;
   align-items: center;
