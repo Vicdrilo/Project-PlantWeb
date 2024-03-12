@@ -9,10 +9,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route path="inicio" element={<Header />}>
-              <Route path="inicio" element={<MainContent type="inicio" />} />
-            </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="inicio" element={<Header />}>
+            <Route path="inicio" element={<MainContent type="inicio" />} />
           </Route>
 
           {/* <Route element={<PrivateRoutes />}>
