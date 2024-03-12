@@ -10,6 +10,7 @@ export default {
     },
     colors: {
       fondo: "#c7edd6",
+      verde: "#013613",
       blue: "#1fb6ff",
       purple: "#7e5bef",
       pink: "#ff49db",
@@ -20,6 +21,7 @@ export default {
       gray: "#8492a6",
       "gray-light": "#d3dce6",
       white: "#fff",
+      black: "#000",
     },
     extend: {},
   },
