@@ -1,4 +1,4 @@
-import { Inicio } from "../components/Inicio";
+import { Inicio } from "../components/main-content-components/Inicio";
 
 export function MainContent({ type }) {
   const content = () => {

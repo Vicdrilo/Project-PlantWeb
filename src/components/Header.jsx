@@ -23,7 +23,10 @@ export function Header() {
           </li>
         </ul>
       </div>
-      <Outlet />
+      <div>
+        AQUI ESTA OUTLET
+        <Outlet />
+      </div>
     </>
   );
 }
