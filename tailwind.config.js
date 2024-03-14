@@ -11,6 +11,7 @@ export default {
     colors: {
       fondo: "#c7edd6",
       verde: "#013613",
+      "verde-claro": "#e6fcef",
       blue: "#1fb6ff",
       purple: "#7e5bef",
       pink: "#ff49db",

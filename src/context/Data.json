@@ -1,0 +1,189 @@
+{
+  "objects": {
+    "plants": [
+      {
+        "id": 1,
+        "name": "Aloe vera",
+        "type": "",
+        "ranking": 10,
+        "advices": "",
+        "img": "aloe.jpg",
+        "votes": 4,
+        "total-votes": 540,
+        "price": 12.3
+      },
+      {
+        "id": 2,
+        "name": "Bonsai ficus",
+        "type": "",
+        "ranking": 7,
+        "advices": "",
+        "img": "ficus-bonsai.jpg",
+        "votes": 5,
+        "price": 25
+      },
+      {
+        "id": 3,
+        "name": "Monstera",
+        "type": "",
+        "ranking": 9,
+        "advices": "",
+        "img": "mosntera.jpg",
+        "votes": 5,
+        "price": 30
+      },
+      {
+        "id": 4,
+        "name": "Nepenthes",
+        "type": "Carnivora",
+        "ranking": 3,
+        "advices": "",
+        "img": "nepenthes.jpg",
+        "votes": 4,
+        "price": 20
+      },
+      {
+        "id": 5,
+        "name": "Strelitzia",
+        "type": "",
+        "ranking": 4,
+        "advices": "Conocida coloquialmente como \"Ave del paraíso\".",
+        "img": "strelitzia-1.jpg",
+        "votes": 5,
+        "price": 40
+      },
+      {
+        "id": 6,
+        "name": "Suculenta",
+        "type": "",
+        "ranking": 5,
+        "advices": "",
+        "img": "suculenta.jpg",
+        "votes": 3,
+        "price": 15
+      },
+      {
+        "id": 7,
+        "name": "Venus atrapamoscas",
+        "type": "Carnivora",
+        "ranking": 2,
+        "advices": "",
+        "img": "venus-flytrap.jpg",
+        "votes": 3,
+        "price": 13
+      }
+    ],
+    "materials": [
+      {
+        "id": 1,
+        "name": "Maceta de plástico",
+        "type": "Macetas",
+        "advices": "Maceta de 5L",
+        "img": "plastic-pot.jpg",
+        "price": 12
+      },
+      {
+        "id": 2,
+        "name": "Maceta de plástico",
+        "type": "Macetas",
+        "advices": "Maceta de plástico de 3L",
+        "img": "plastic-pot.jpg",
+        "price": 4
+      },
+      {
+        "id": 3,
+        "name": "Maceta de barro",
+        "type": "Macetas",
+        "advices": "Maceta de 5L",
+        "img": "mud-pot.jpg",
+        "price": 18
+      },
+      {
+        "id": 4,
+        "name": "Maceta para bonsai",
+        "type": "Macetas",
+        "advices": "",
+        "img": "bonsai-pot.jpg",
+        "price": 24
+      },
+      {
+        "id": 5,
+        "name": "Regadera efecto lluvia",
+        "type": "Regaderas",
+        "advices": "Regadera de 1L",
+        "img": "raining-water-can.jpg",
+        "price": 8
+      },
+      {
+        "id": 6,
+        "name": "Regadera de plástico 3L",
+        "type": "Regaderas",
+        "advices": "Regadera de plástico de 3L",
+        "img": "water-can.jpg",
+        "price": 5
+      },
+      {
+        "id": 7,
+        "name": "Substrato universal 3L",
+        "type": "Substrato",
+        "advices": "Substrato universal de 3L",
+        "img": "subs-3l.jpg",
+        "price": 12
+      },
+      {
+        "id": 8,
+        "name": "Substrato universal 5L",
+        "type": "Substrato",
+        "advices": "Substrato universal de 5L",
+        "img": "subs-5l.jpg",
+        "price": 17
+      },
+      {
+        "id": 9,
+        "name": "Substrato para bonsai 3L",
+        "type": "Substrato",
+        "advices": "Substrato universal de 3L",
+        "img": "subs-bonsai.jpg",
+        "price": 14
+      }
+    ]
+  },
+  "forum": [
+    {
+      "id": "",
+      "title": "",
+      "text": "",
+      "user-creator": "",
+      "votes": "",
+      "answers": [{ "text": "", "user": "", "votes": "", "answers": [{}] }]
+    },
+    {
+      "id": "",
+      "title": "",
+      "text": "",
+      "user-creator": "",
+      "votes": "",
+      "answers": [{ "text": "", "user": "", "votes": "", "answers": [{}] }]
+    }
+  ],
+  "advices": [
+    {
+      "id": "",
+      "title": "",
+      "text": "",
+      "votes": ""
+    },
+    {
+      "id": "",
+      "title": "",
+      "text": "",
+      "votes": ""
+    },
+    {
+      "id": "",
+      "title": "",
+      "text": "",
+      "votes": ""
+    }
+  ]
+}

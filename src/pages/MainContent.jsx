@@ -1,4 +1,4 @@
-import { Fitoteca } from "../components/main-content-components/Fitoteca";
+import { Plantas } from "../components/main-content-components/Plantas";
 import { Inicio } from "../components/main-content-components/Inicio";
 
 export function MainContent({ type }) {
@@ -7,21 +7,21 @@ export function MainContent({ type }) {
       return <Inicio />;
     }
 
-    if (type === "fitoteca") {
-      return <Fitoteca />;
+    if (type === "plantas") {
+      return <Plantas />;
     }
 
     if (type === "matirials") {
-      return <Fitoteca />;
+      return <Plantas />;
     }
 
     if (type === "advice") {
-      return <Fitoteca />;
+      return <Plantas />;
     }
 
     if (type === "forum") {
-      return <Fitoteca />;
+      return <Plantas />;
     }
   };
-  return <>{content()}</>;
+  return <div className="bg-verde-claro">{content()}</div>;
 }

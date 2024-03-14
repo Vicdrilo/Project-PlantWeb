@@ -13,9 +13,9 @@ export function Header() {
       </div>
       {/* <div className="navbar bg-white">
         <ul className="ul list-none flex flex-row justify-center w-full">
-          <Link to="fitoteca">
-            <li className="fitoteca-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-verde text-center w-[150px] p-2">
-              Fitoteca
+          <Link to="plantas">
+            <li className="plantas-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-verde text-center w-[150px] p-2">
+              Plantas
             </li>
           </Link>
           <Link to="materiales">
@@ -38,15 +38,15 @@ export function Header() {
       <div className="navbar bg-transparent">
         <ul className="ul list-none flex flex-row justify-center w-full">
           <NavLink
-            to="fitoteca"
+            to="plantas"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
-              Fitoteca
+              Plantas
             </li>
           </NavLink>
           <NavLink
-            to="matirials"
+            to="materiales"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
@@ -54,7 +54,7 @@ export function Header() {
             </li>
           </NavLink>
           <NavLink
-            to="advice"
+            to="consejos"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
@@ -62,7 +62,7 @@ export function Header() {
             </li>
           </NavLink>
           <NavLink
-            to="forum"
+            to="foro"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
@@ -72,7 +72,6 @@ export function Header() {
         </ul>
       </div>
       <div>
-        AQUI ESTA OUTLET
         <Outlet />
       </div>
     </>
