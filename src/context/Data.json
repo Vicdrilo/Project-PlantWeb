@@ -7,7 +7,7 @@
         "type": "",
         "ranking": 10,
         "advices": "",
-        "img": "aloe.jpg",
+        "img": "aloe",
         "votes": 4,
         "total-votes": 540,
         "price": 12.3
@@ -18,7 +18,7 @@
         "type": "",
         "ranking": 7,
         "advices": "",
-        "img": "ficus-bonsai.jpg",
+        "img": "ficus-bonsai",
         "votes": 5,
         "price": 25
       },
@@ -28,7 +28,7 @@
         "type": "",
         "ranking": 9,
         "advices": "",
-        "img": "mosntera.jpg",
+        "img": "monstera",
         "votes": 5,
         "price": 30
       },
@@ -38,7 +38,7 @@
         "type": "Carnivora",
         "ranking": 3,
         "advices": "",
-        "img": "nepenthes.jpg",
+        "img": "nepenthes",
         "votes": 4,
         "price": 20
       },
@@ -48,7 +48,7 @@
         "type": "",
         "ranking": 4,
         "advices": "Conocida coloquialmente como \"Ave del paraíso\".",
-        "img": "strelitzia-1.jpg",
+        "img": "strelitzia-1",
         "votes": 5,
         "price": 40
       },
@@ -58,7 +58,7 @@
         "type": "",
         "ranking": 5,
         "advices": "",
-        "img": "suculenta.jpg",
+        "img": "suculenta",
         "votes": 3,
         "price": 15
       },
@@ -68,7 +68,7 @@
         "type": "Carnivora",
         "ranking": 2,
         "advices": "",
-        "img": "venus-flytrap.jpg",
+        "img": "venus-flytrap",
         "votes": 3,
         "price": 13
       }
@@ -79,7 +79,7 @@
         "name": "Maceta de plástico",
         "type": "Macetas",
         "advices": "Maceta de 5L",
-        "img": "plastic-pot.jpg",
+        "img": "plastic-pot",
         "price": 12
       },
       {
@@ -87,7 +87,7 @@
         "name": "Maceta de plástico",
         "type": "Macetas",
         "advices": "Maceta de plástico de 3L",
-        "img": "plastic-pot.jpg",
+        "img": "plastic-pot",
         "price": 4
       },
       {
@@ -95,7 +95,7 @@
         "name": "Maceta de barro",
         "type": "Macetas",
         "advices": "Maceta de 5L",
-        "img": "mud-pot.jpg",
+        "img": "mud-pot",
         "price": 18
       },
       {
@@ -103,7 +103,7 @@
         "name": "Maceta para bonsai",
         "type": "Macetas",
         "advices": "",
-        "img": "bonsai-pot.jpg",
+        "img": "bonsai-pot",
         "price": 24
       },
       {
@@ -111,7 +111,7 @@
         "name": "Regadera efecto lluvia",
         "type": "Regaderas",
         "advices": "Regadera de 1L",
-        "img": "raining-water-can.jpg",
+        "img": "raining-water-can",
         "price": 8
       },
       {
@@ -119,7 +119,7 @@
         "name": "Regadera de plástico 3L",
         "type": "Regaderas",
         "advices": "Regadera de plástico de 3L",
-        "img": "water-can.jpg",
+        "img": "water-can",
         "price": 5
       },
       {
@@ -127,7 +127,7 @@
         "name": "Substrato universal 3L",
         "type": "Substrato",
         "advices": "Substrato universal de 3L",
-        "img": "subs-3l.jpg",
+        "img": "subs-3l",
         "price": 12
       },
       {
@@ -135,7 +135,7 @@
         "name": "Substrato universal 5L",
         "type": "Substrato",
         "advices": "Substrato universal de 5L",
-        "img": "subs-5l.jpg",
+        "img": "subs-5l",
         "price": 17
       },
       {
@@ -143,7 +143,7 @@
         "name": "Substrato para bonsai 3L",
         "type": "Substrato",
         "advices": "Substrato universal de 3L",
-        "img": "subs-bonsai.jpg",
+        "img": "subs-bonsai",
         "price": 14
       }
     ]
