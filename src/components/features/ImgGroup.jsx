@@ -6,17 +6,13 @@ import { Img } from "./Img";
 export function ImgGroup({ type }) {
   //true despliega las fotos para que sean visibles
   //false deja las fotos amontonadas
-  const [view, setView] = useState(false);
 
   const temaImg = type;
   const { data } = useContext(dataPovider);
 
   return (
     <>
-      <div
-        className="img-group-container flex justify-araund cursor-pointer gap-1 w-full h-[300px] pb-5"
-        onFocus={() => setView(!view)}
-      >
+      <div className="img-group-container cursor-pointer flex items-center my-8 overflow-x-scroll overflow-y-hidden">
         {grupoFotos(data, temaImg)}
       </div>
     </>

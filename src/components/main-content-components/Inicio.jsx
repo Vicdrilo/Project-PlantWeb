@@ -12,7 +12,7 @@ export function Inicio() {
       </Link>
       <ImgGroup type="plantas" />
 
-      <hr className="bg-verde h-[2px]" />
+      {/* <hr className="bg-verde h-[2px] mb-5" /> */}
       <Link
         to="/materiales"
         className="flex justify-start text-verde hover:text-verde w-1/4"
@@ -21,7 +21,7 @@ export function Inicio() {
       </Link>
       <ImgGroup type="materiales" />
 
-      <hr className="bg-verde h-[2px]" />
+      {/* <hr className="bg-verde h-[2px]" /> */}
     </div>
   );
 }

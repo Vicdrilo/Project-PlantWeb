@@ -1,5 +1,6 @@
 import "../styles/Header.css";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export function Header() {
   return (
@@ -48,8 +49,11 @@ export function Header() {
           </NavLink>
         </ul>
       </div>
-      <div>
+      <div className="header-main-content">
         <Outlet />
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );

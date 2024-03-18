@@ -23,5 +23,5 @@ export function MainContent({ type }) {
       return <Plantas />;
     }
   };
-  return <div className="bg-verde-claro">{content()}</div>;
+  return <div className="main-ontent-container">{content()}</div>;
 }

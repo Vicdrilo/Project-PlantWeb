@@ -1,8 +1,18 @@
 .img-group-container {
-  overflow-x: scroll;
-  /* overflow: hidden; */
+  /* -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); */
 }
 
 /* .img-group-container::-webkit-scrollbar {
   display: none;
 } */
+
+/* .img-group-container:hover {
+  filter: none;
+  transition: all 300ms;
+} */
+
+.img-group-container > div {
+  /* margin-left: 10px;*/
+  /* margin-right: 10px; */
+}
