@@ -11,30 +11,7 @@ export function Header() {
           </h1>
         </Link>
       </div>
-      {/* <div className="navbar bg-white">
-        <ul className="ul list-none flex flex-row justify-center w-full">
-          <Link to="plantas">
-            <li className="plantas-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-verde text-center w-[150px] p-2">
-              Plantas
-            </li>
-          </Link>
-          <Link to="materiales">
-            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-verde text-center w-[150px] p-2">
-              Materiales
-            </li>
-          </Link>
-          <Link to="advice">
-            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-verde text-center w-[150px] p-2">
-              Consejos
-            </li>
-          </Link>
-          <Link to="forum">
-            <li className="nav-btn hover:bg-fondo border-2 border-fondo md:border-white md:text-2xl text-verde text-center w-[150px] p-2">
-              Foro
-            </li>
-          </Link>
-        </ul>
-      </div> */}
+
       <div className="navbar bg-transparent">
         <ul className="ul list-none flex flex-row justify-center w-full">
           <NavLink

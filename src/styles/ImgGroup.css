@@ -40,3 +40,8 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.img-group-container {
+  overflow-x: scroll;
+  overflow: hidden;
+}
