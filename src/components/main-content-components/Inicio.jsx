@@ -19,7 +19,7 @@ export function Inicio() {
       >
         <h1>Materiales</h1>
       </Link>
-      <ImgGroup type="/materiales" />
+      <ImgGroup type="materiales" />
 
       <hr className="bg-verde h-[2px]" />
     </div>

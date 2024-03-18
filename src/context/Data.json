@@ -76,7 +76,7 @@
     "materials": [
       {
         "id": 1,
-        "name": "Maceta de plástico",
+        "name": "Maceta de plástico 5L",
         "type": "Macetas",
         "advices": "Maceta de 5L",
         "img": "plastic-pot",
@@ -84,7 +84,7 @@
       },
       {
         "id": 2,
-        "name": "Maceta de plástico",
+        "name": "Maceta de plástico 3L",
         "type": "Macetas",
         "advices": "Maceta de plástico de 3L",
         "img": "plastic-pot",
@@ -116,9 +116,9 @@
       },
       {
         "id": 6,
-        "name": "Regadera de plástico 3L",
+        "name": "Regadera de plástico 2L",
         "type": "Regaderas",
-        "advices": "Regadera de plástico de 3L",
+        "advices": "Regadera de plástico de 2L",
         "img": "water-can",
         "price": 5
       },
@@ -140,9 +140,9 @@
       },
       {
         "id": 9,
-        "name": "Substrato para bonsai 3L",
+        "name": "Substrato para bonsai 5L",
         "type": "Substrato",
-        "advices": "Substrato universal de 3L",
+        "advices": "Substrato universal de 5L",
         "img": "subs-bonsai",
         "price": 14
       }

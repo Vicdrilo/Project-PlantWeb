@@ -14,7 +14,7 @@ export function ImgGroup({ type }) {
   return (
     <>
       <div
-        className="img-group-container flex justify-araund cursor-pointer gap-1 w-full h-[300px]"
+        className="img-group-container flex justify-araund cursor-pointer gap-1 w-full h-[300px] pb-5"
         onFocus={() => setView(!view)}
       >
         {grupoFotos(data, temaImg)}
@@ -39,9 +39,7 @@ function grupoFotos(data, temaImg) {
     return (
       <>
         {data.objects.materials.map((material) => {
-          return (
-            <img key={material.id} src={material.img} alt={material.name} />
-          );
+          return <Img name={material.img} key={material.id} />;
         })}
       </>
     );
