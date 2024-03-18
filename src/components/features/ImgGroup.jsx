@@ -10,31 +10,6 @@ export function ImgGroup({ type }) {
 
   const temaImg = type;
   const { data } = useContext(dataPovider);
-  //const { data } = useDataApi();
-  // const grupoFotos = () => {
-  //   if (temaImg === "plantas") {
-  //     return (
-  //       <>
-  //         {data.objects.plants.map((plant) => {
-
-  //           return <Img name={plant.img} key={plant.id} />;
-  //         })}
-  //       </>
-  //     );
-  //   }
-
-  //   if (temaImg === "materiales") {
-  //     return (
-  //       <>
-  //         {data.objects.materials.map((material) => {
-  //           return (
-  //             <img key={material.id} src={material.img} alt={material.name} />
-  //           );
-  //         })}
-  //       </>
-  //     );
-  //   }
-  // };
 
   return (
     <>

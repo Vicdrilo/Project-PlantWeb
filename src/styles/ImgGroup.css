@@ -1,47 +1,8 @@
-.aloe {
-  background-image: url("../assets/plantas/aloe.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.ficus-bonsai {
-  background-image: url("../assets/plantas/ficus-bonsai.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.monstera {
-  background-image: url("../assets/plantas/monstera.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.nepenthes {
-  background-image: url("../assets/plantas/nepenthes.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.strelitzia-1 {
-  background-image: url("../assets/plantas/strelitzia-1.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.suculenta {
-  background-image: url("../assets/plantas/suculenta.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.venus-flytrap {
-  background-image: url("../assets/plantas/venus-flytrap.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .img-group-container {
   overflow-x: scroll;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+
+/* .img-group-container::-webkit-scrollbar {
+  display: none;
+} */

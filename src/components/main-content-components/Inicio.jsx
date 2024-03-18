@@ -6,14 +6,17 @@ export function Inicio() {
     <div className="inicio-container">
       <Link
         to="/plantas"
-        className="flex justify-start text-verde hover:text-verde"
+        className="flex justify-start text-verde hover:text-verde w-1/4"
       >
         <h1>Plantas</h1>
       </Link>
       <ImgGroup type="plantas" />
 
       <hr className="bg-verde h-[2px]" />
-      <Link to="materiales" className="text-verde hover:text-verde">
+      <Link
+        to="/materiales"
+        className="flex justify-start text-verde hover:text-verde w-1/4"
+      >
         <h1>Materiales</h1>
       </Link>
       <ImgGroup type="/materiales" />
