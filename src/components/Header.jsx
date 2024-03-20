@@ -1,6 +1,7 @@
 import "../styles/Header.css";
-import { Link, NavLink, Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
+import { Link, Outlet } from "react-router-dom";
+import { Footer } from "../components/Footer";
+import { NavBar } from "./NavBar";
 
 export function Header() {
   return (
@@ -12,49 +13,12 @@ export function Header() {
           </h1>
         </Link>
       </div>
-
-      <div className="navbar bg-transparent">
-        <ul className="ul list-none flex flex-row justify-center w-full">
-          <NavLink
-            to="plantas"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
-              Plantas
-            </li>
-          </NavLink>
-          <NavLink
-            to="materiales"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
-              Materiales
-            </li>
-          </NavLink>
-          <NavLink
-            to="consejos"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
-              Consejos
-            </li>
-          </NavLink>
-          <NavLink
-            to="foro"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            <li className="nav-btn hover:bg-fondo border-2 border-white md:text-2xl text-verde text-center w-[100px] md:w-[150px] p-2">
-              Foro
-            </li>
-          </NavLink>
-        </ul>
-      </div>
+      {/* <NavBar /> */}
       <div className="header-main-content">
         <Outlet />
       </div>
-      <div>
-        <Footer />
-      </div>
+
+      <Footer />
     </>
   );
 }
