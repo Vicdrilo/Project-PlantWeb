@@ -27,7 +27,7 @@ export function Footer() {
         className={`fixed bottom-0 left-0 right-0 flex flex-col ${sizeBar} rounded-t-xl`}
       >
         <div
-          className={` flex justify-center flex-nowrap w-full ${heightBtns} bg-white rounded-t-xl transition-all transition duration-300`}
+          className={` flex justify-center flex-nowrap w-full ${heightBtns} bg-white rounded-t-xl`}
         >
           <Link
             to="/inicio"
