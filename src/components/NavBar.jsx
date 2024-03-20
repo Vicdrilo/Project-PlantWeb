@@ -23,8 +23,11 @@ export function NavBar() {
             onClick={() => setMenu(false)}
           >
             <li className="nav-btn border-2 border-white md:text-2xl text-verde text-center w-[200px] md:w-[150px] p-2">
-              <img src={plantIcon} alt="" className="w-[24px] h-[24px]" />{" "}
-              Plantas
+              <div className="w-[100px] flex items-start">
+                {/* Depende lo que diga Luis quitamos o no el div anterior. Menú alineado por un lado o justificado? */}
+                <img src={plantIcon} alt="" className="w-[24px] h-[24px]" />
+                Plantas
+              </div>
             </li>
           </NavLink>
           <NavLink
@@ -33,8 +36,11 @@ export function NavBar() {
             onClick={() => setMenu(false)}
           >
             <li className="nav-btn border-2 border-white md:text-2xl text-verde text-center w-[200px] md:w-[150px] p-2">
-              <img src={materialIcon} alt="" className="w-[24px] h-[24px]" />{" "}
-              Materiales
+              <div className="w-[100px] flex items-start">
+                {/* Depende lo que diga Luis quitamos o no el div anterior. Menú alineado por un lado o justificado? */}
+                <img src={materialIcon} alt="" className="w-[24px] h-[24px]" />
+                Materiales
+              </div>
             </li>
           </NavLink>
           <NavLink
@@ -43,7 +49,11 @@ export function NavBar() {
             onClick={() => setMenu(false)}
           >
             <li className="nav-btn border-2 border-white md:text-2xl text-verde text-center w-[200px] md:w-[150px] p-2">
-              <img src={adviceIcon} alt="" className="" /> Consejos
+              <div className="w-[100px] flex items-start">
+                {/* Depende lo que diga Luis quitamos o no el div anterior. Menú alineado por un lado o justificado? */}
+                <img src={adviceIcon} alt="" className="mr-1" />
+                Consejos
+              </div>
             </li>
           </NavLink>
           <NavLink
@@ -52,7 +62,10 @@ export function NavBar() {
             onClick={() => setMenu(false)}
           >
             <li className="nav-btn border-2 border-white md:text-2xl text-verde text-center w-[200px] md:w-[150px] p-2">
-              <img src={forumIcon} alt="" className="" /> Foro
+              <div className="w-[100px] flex items-start">
+                {/* Depende lo que diga Luis quitamos o no el div anterior. Menú alineado por un lado o justificado? */}
+                <img src={forumIcon} alt="" className="mr-1" /> Foro
+              </div>
             </li>
           </NavLink>
         </ul>

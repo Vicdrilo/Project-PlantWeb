@@ -3,7 +3,7 @@ import "../styles/Login.css";
 
 export function Login() {
   return (
-    <div className="rings md:border-4">
+    <div className="rings border-4">
       <div className="login">
         <h2>Login</h2>
         <div className="inputBx">

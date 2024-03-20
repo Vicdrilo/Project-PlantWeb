@@ -13,15 +13,13 @@ export function Footer() {
   //Ahora en context
   //   const [search, setSearch] = useState(false);
   //   const [user, setUser] = useState(false);
-  const { menu, setMenu, user, setUser } = useContext(dataPovider);
+  const { menu, setMenu } = useContext(dataPovider);
 
-  const sizeBar =
-    menu || user === true
-      ? "border-2 border-gray-light rounded-t-xl" //Se le puede añadir h-[100vh] para que ocupe toda la pantalla
-      : "h-[40px] border-2 border-gray-light rounded-t-xl";
-  const heightBtns =
-    menu || user === true ? "h-[40px] border-b-2 border-gray-light" : "h-full";
-  const sizeResult = menu || user === true ? "h-full" : "hidden";
+  const sizeBar = menu
+    ? "border-2 border-gray-light rounded-t-xl" //Se le puede añadir h-[100vh] para que ocupe toda la pantalla
+    : "h-[40px] border-2 border-gray-light rounded-t-xl";
+  const heightBtns = menu ? "h-[40px] border-b-2 border-gray-light" : "h-full";
+  const sizeResult = menu ? "h-full" : "hidden";
 
   return (
     <>
@@ -36,7 +34,6 @@ export function Footer() {
             className={`w-1/3 border-2  border-gray-light border-y-white border-s-white rounded-tl-xl hover:border-verde flex justify-center items-center`}
             onClick={() => {
               setMenu(false);
-              setUser(false);
             }}
           >
             <img src={homeIcon} alt="" />
@@ -46,7 +43,6 @@ export function Footer() {
             className={`w-1/3 border-2  border-white hover:border-verde flex justify-center items-center cursor-pointer`}
             onClick={() => {
               setMenu(!menu);
-              setUser(false);
             }}
           >
             {menu ? (
@@ -61,7 +57,6 @@ export function Footer() {
             className={`w-1/3 border-2  border-gray-light border-y-white border-e-white rounded-tr-xl hover:border-verde flex justify-center items-center cursor-pointer`}
             onClick={() => {
               setMenu(false);
-              setUser(false);
             }}
           >
             <img src={userIcon} alt="" />
