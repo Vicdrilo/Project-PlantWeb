@@ -17,17 +17,18 @@ import subs3 from "../../assets/materiales/subs-3l.jpg";
 import subs5 from "../../assets/materiales/subs-5l.jpg";
 import subsBonsai from "../../assets/materiales/subs-bonsai.jpg";
 
-export function Img({ name }) {
+export function Img({ name, className }) {
+  const styles = className ? className : "";
   return (
     <>
       {/* <div className="img-container w-[250px] h-[300px]"> */}
-      {getImg(name)}
+      {getImg(name, styles)}
       {/* </div>  */}
     </>
   );
 }
 
-function getImg(name) {
+function getImg(name, styles) {
   switch (name) {
     //Imagenes de plantas
     case "aloe":
@@ -35,7 +36,7 @@ function getImg(name) {
         <img
           src={aloe}
           alt="aloe"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "ficus-bonsai":
@@ -43,7 +44,7 @@ function getImg(name) {
         <img
           src={ficusBonsai}
           alt="ficusBonsai"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "monstera":
@@ -51,7 +52,7 @@ function getImg(name) {
         <img
           src={monstera}
           alt="monstera"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "nepenthes":
@@ -59,7 +60,7 @@ function getImg(name) {
         <img
           src={nepenthes}
           alt="nepenthes"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "strelitzia-1":
@@ -67,7 +68,7 @@ function getImg(name) {
         <img
           src={strelitzia}
           alt="strelitzia"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "suculenta":
@@ -75,7 +76,7 @@ function getImg(name) {
         <img
           src={suculenta}
           alt="suculenta"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "venus-flytrap":
@@ -83,7 +84,7 @@ function getImg(name) {
         <img
           src={venus}
           alt="venus"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
 
@@ -93,7 +94,7 @@ function getImg(name) {
         <img
           src={bonsaiPot}
           alt="aloe"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "mud-pot":
@@ -101,7 +102,7 @@ function getImg(name) {
         <img
           src={mudPot}
           alt="ficusBonsai"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "plastic-pot":
@@ -109,7 +110,7 @@ function getImg(name) {
         <img
           src={plasticPot}
           alt="monstera"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "raining-water-can":
@@ -117,7 +118,7 @@ function getImg(name) {
         <img
           src={rainCan}
           alt="nepenthes"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "water-can":
@@ -125,7 +126,7 @@ function getImg(name) {
         <img
           src={can}
           alt="strelitzia"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "subs-3l":
@@ -133,7 +134,7 @@ function getImg(name) {
         <img
           src={subs3}
           alt="suculenta"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "subs-5l":
@@ -141,7 +142,7 @@ function getImg(name) {
         <img
           src={subs5}
           alt="venus"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
     case "subs-bonsai":
@@ -149,7 +150,7 @@ function getImg(name) {
         <img
           src={subsBonsai}
           alt="venus"
-          className="w-[200px] h-[250px]  me-8 mix-blend-multiply"
+          className={`rounded-lg mix-blend-multiply ${styles}`}
         />
       );
   }

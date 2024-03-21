@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-// import { ImgGroup } from "../features/ImgGroup";
-import { ImgCarousel } from "../features/ImgGroupCarousel";
+// import { ImgGroup } from "../ImgGroup";
+import { ImgCarousel } from "../ImgGroupCarousel";
 
 export function Inicio() {
   return (

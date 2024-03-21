@@ -1,0 +1,4 @@
+.card-move {
+  transform: translateX(500px);
+  transition: transform ease-in 300ms;
+}

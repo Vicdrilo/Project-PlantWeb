@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import { dataPovider } from "../../context/FunctionalityDataProvider";
-import "../../styles/ImgGroup.css";
-import { Img } from "./Img";
+import { dataPovider } from "../context/FunctionalityDataProvider";
+import "../styles/ImgGroup.css";
+import { Img } from "./features/Img";
 
 export function ImgGroup({ type }) {
   //true despliega las fotos para que sean visibles

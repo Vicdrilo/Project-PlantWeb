@@ -40,23 +40,12 @@
 
     /* Un color de fondo */
 
-    /* background-image: url("./assets/inicio/inicio-1.jpg");
-    background-position: center;
-    background-repeat: unset;
-    background-size: contain; */
-    /* background-color: #c7edd6; */
-    /* background-color: #e6fcef; */
-    /* background: linear-gradient(45deg, #c7edd6, #118c40); */
-    /* background: linear-gradient(45deg, white, #c7edd6, #118c40); */
     background: linear-gradient(45deg, #c7edd6, white, #c7edd6);
 
     /* Debemos superponerlo */
     z-index: 1000;
   }
 
-  /* El texto que vamos a mostrar */
-  /* #mensaje::after { */
-  /* content: "Estamos trabajando en la versión web"; */
   #mensaje::before {
     content: "Estamos trabajando en la versión web";
     font-size: 2rem;
