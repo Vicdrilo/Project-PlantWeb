@@ -12,7 +12,7 @@ export function ImgCarousel({ type }) {
     <>
       <div className="carousel carousel-end pe-1">
         {grupoFotos(data, temaImg)}
-        <div className="carousel-item h-[250px] w-[20px]">
+        <div className="carousel-item h-[400px] w-[20px]">
           <Link
             to={`/${temaImg}`}
             className="flex justify-center itmes-center bg-fondo hover:bg-verde-claro btnSeeMore text-verde hover:text-verde"
