@@ -14,11 +14,19 @@ export function Header() {
   return (
     <>
       <div className="title-header flex flex-col items-center justify-center h-[150px] pb-8">
-        <div className="media-icons h-[50px] w-full flex justify-end items-start p-2">
-          <img src={mediaIcon} alt="" className="" />
-          <img src={mediaIcon1} alt="" className="" />
-          <img src={mediaIcon2} alt="" className="" />
-          <img src={mediaIcon3} alt="" className="" />
+        <div className="media-icons h-[50px] w-full flex justify-end items-center gap-2 p-2">
+          <Link to="https://www.instagram.com/ever_green_plants/">
+            <img src={mediaIcon} alt="" className="" />
+          </Link>
+          <Link to="https://www.youtube.com/@KaeruEn">
+            <img src={mediaIcon1} alt="" className="" />
+          </Link>
+          <Link to="tg://resolve?domain=Vicdrilo">
+            <img src={mediaIcon2} alt="" className="" />
+          </Link>
+          <Link to="https://x.com/floresiplantas?s=11&t=A_zPZ6ISCU4W-2bD4WsrMA">
+            <img src={mediaIcon3} alt="" className="" />
+          </Link>
         </div>
         <Link to="inicio" className="flex items-center justify-center">
           <h1 className="satisfy-regular text-white text-5xl md:text-8xl">
