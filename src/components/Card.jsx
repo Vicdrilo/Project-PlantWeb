@@ -62,8 +62,10 @@ function DataCard({ dataForCard, handleCard, data }) {
           </div>
         </figure>
         <div className="h-1/3 p-2 card-body text-start">
-          <h2 className="card-title text-2xl">{dataForCard.name}</h2>
-          <p className="h-2/3 overflow-y-auto text-md">{dataForCard.advices}</p>
+          <h2 className="card-title text-2xl text-verde">{dataForCard.name}</h2>
+          <p className="h-2/3 overflow-y-auto text-md text-verde">
+            {dataForCard.advices}
+          </p>
           <div className="card-actions flex justify-between ">
             <div className="direction-btns flex justify-center items-center h-full gap-2">
               <button
