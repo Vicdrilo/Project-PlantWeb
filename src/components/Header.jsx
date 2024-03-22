@@ -2,10 +2,10 @@ import "../styles/Header.css";
 import { Link, Outlet } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { SearchBar } from "./features/SearchBar";
-import mediaIcon from "../assets/icons/Vector.svg";
-import mediaIcon1 from "../assets/icons/Vector-1.svg";
-import mediaIcon2 from "../assets/icons/Vector.s-2vg";
-import mediaIcon3 from "../assets/icons/Vector-3.svg";
+import mediaIcon from "../assets/icons/media-icons/Vector.svg";
+import mediaIcon1 from "../assets/icons/media-icons/Vector-1.svg";
+import mediaIcon2 from "../assets/icons/media-icons/Vector-2.svg";
+import mediaIcon3 from "../assets/icons/media-icons/Vector-3.svg";
 
 import { useContext } from "react";
 import { dataPovider } from "../context/FunctionalityDataProvider";
