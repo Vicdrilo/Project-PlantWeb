@@ -2,7 +2,11 @@ import "../styles/Header.css";
 import { Link, Outlet } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { SearchBar } from "./features/SearchBar";
-import whiteSearchIcon from "../assets/icons/white-search-icon.svg";
+import mediaIcon from "../assets/icons/Vector.svg";
+import mediaIcon1 from "../assets/icons/Vector-1.svg";
+import mediaIcon2 from "../assets/icons/Vector.s-2vg";
+import mediaIcon3 from "../assets/icons/Vector-3.svg";
+
 import { useContext } from "react";
 import { dataPovider } from "../context/FunctionalityDataProvider";
 
@@ -11,7 +15,10 @@ export function Header() {
     <>
       <div className="title-header flex flex-col items-center justify-center h-[150px] pb-8">
         <div className="media-icons h-[50px] w-full flex justify-end items-start p-2">
-          <img src={whiteSearchIcon} alt="" className="" />
+          <img src={mediaIcon} alt="" className="" />
+          <img src={mediaIcon1} alt="" className="" />
+          <img src={mediaIcon2} alt="" className="" />
+          <img src={mediaIcon3} alt="" className="" />
         </div>
         <Link to="inicio" className="flex items-center justify-center">
           <h1 className="satisfy-regular text-white text-5xl md:text-8xl">
