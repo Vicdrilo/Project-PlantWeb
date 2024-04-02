@@ -53,9 +53,14 @@ function DataCard({ dataForCard, handleCard, data }) {
 
   return (
     <>
-      <div className={`card w-[250px] h-[550px] glass p-2  bg-white`}>
+      <div
+        className={`card w-[250px] h-[550px] md:w-[400px] md:h-[750px] glass p-2  bg-white`}
+      >
         <figure className="h-2/2 w-full">
-          <Img name={dataForCard.img} className="w-full h-[300px]" />
+          <Img
+            name={dataForCard.img}
+            className="w-full h-[300px] md:h-[400px]"
+          />
           <div className="absolute top-3 right-2 fav-star1 animate-bounce rounded-full bg-white p-2 shadow-lg shadow-gray">
             {" "}
             <img src={desFavIcon} alt="" className=" cursor-pointer" />{" "}

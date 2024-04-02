@@ -24,13 +24,13 @@ export function Footer() {
   return (
     <>
       <div
-        className={`fixed bottom-0 left-0 right-0 flex flex-col ${sizeBar} rounded-t-xl`}
+        className={`fixed bottom-0 left-0 right-0 flex flex-col ${sizeBar} rounded-t-xl transition-all ease-in-out duration-1000`}
       >
         <div
           className={` flex justify-center flex-nowrap w-full ${heightBtns} bg-white rounded-t-xl`}
         >
           <Link
-            to="/inicio"
+            to="/"
             className={`w-1/3 border-2  border-gray-light border-y-white border-s-white rounded-tl-xl hover:border-verde flex justify-center items-center`}
             onClick={() => {
               setMenu(false);
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           <Link
-            to="/inicio"
+            to="/login"
             className={`w-1/3 border-2  border-gray-light border-y-white border-e-white rounded-tr-xl hover:border-verde flex justify-center items-center cursor-pointer`}
             onClick={() => {
               setMenu(false);

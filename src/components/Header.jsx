@@ -7,14 +7,32 @@ import mediaIcon1 from "../assets/icons/media-icons/Vector-1.svg";
 import mediaIcon2 from "../assets/icons/media-icons/Vector-2.svg";
 import mediaIcon3 from "../assets/icons/media-icons/Vector-3.svg";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { dataPovider } from "../context/FunctionalityDataProvider";
 
 export function Header() {
+  const [expanded, setExpanded] = useState(true);
+
+  const hideContent = expanded ? "hidden" : "flex";
+  const fullScreen = expanded
+    ? "h-full justify-center  items-start pt-[150px]"
+    : "h-[150px] flex-col";
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setExpanded(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
   return (
     <>
-      <div className="title-header flex flex-col items-center justify-center h-[150px] pb-8">
-        <div className="media-icons h-[50px] w-full flex justify-end items-center gap-2 p-2">
+      <div
+        className={`title-header flex  ${fullScreen} pb-8 transition-all ease-in-out duration-300`}
+      >
+        <div
+          className={`media-icons h-[50px] w-full justify-end items-center gap-2 p-2 ${hideContent} transition-all ease-in-out delay-1000`}
+        >
           <Link to="https://www.instagram.com/ever_green_plants/">
             <img src={mediaIcon} alt="" className="" />
           </Link>
@@ -28,7 +46,7 @@ export function Header() {
             <img src={mediaIcon3} alt="" className="" />
           </Link>
         </div>
-        <Link to="inicio" className="flex items-center justify-center">
+        <Link to="/" className="flex items-center justify-center">
           <h1 className="satisfy-regular text-white text-5xl md:text-8xl">
             Planting a pine
           </h1>
@@ -37,8 +55,8 @@ export function Header() {
 
       {/* <div className="search-bar-container h-[50px]  bg-fondo"></div> */}
 
-      <div className="header-main-content">
-        <div className="h-[50px] flex items-center">
+      <div className={`header-main-content`}>
+        <div className={` h-[50px]  items-center ${hideContent}`}>
           <SearchBar />
         </div>
         {/* <SearchBar /> */}

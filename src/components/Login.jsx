@@ -3,31 +3,28 @@ import "../styles/Login.css";
 
 export function Login() {
   return (
-    <div className="rings border-4">
+    <div className="rings rounded-xl md:py-[300px] md:px-[300px]">
       <div className="login">
         <h2>Login</h2>
         <div className="inputBx">
-          <input type="text" placeholder="Username" />
+          <input type="email" placeholder="@email" />
         </div>
         <div className="inputBx">
           <input type="password" placeholder="Password" />
         </div>
         <div className="inputBx">
-          <input type="submit" value="Sign in" />
+          <input type="submit" value="Log in" />
         </div>
         <div className="links">
-          <a
-            href="#"
-            className="bg-[#013613] rounded-full w-[150px] px- text-nowrap"
-          >
+          <a href="#" className=" rounded-full w-[150px] px- text-nowrap">
             Forget Password
           </a>
-          <a href="#" className="bg-[#013613] rounded-full w-1/3">
+          <Link to="/signup" className=" rounded-full w-1/3">
             Signup
-          </a>
+          </Link>
         </div>
         <div className="no-account">
-          <Link to="inicio" className="bg-[#013613] rounded-full w-full">
+          <Link to="/" className=" rounded-full w-full">
             Continue with no account
           </Link>
         </div>

@@ -28,6 +28,7 @@
   align-items: center;
   box-shadow: none;
   border-color: white;
+  background: linear-gradient(45deg, #118c40, #013613);
 }
 
 .login {
