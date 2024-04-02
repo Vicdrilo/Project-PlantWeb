@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { MainContent } from "./pages/MainContent";
 import { LoginSignup } from "./pages/LoginSignup";
 import { Foro } from "./components/Foro";
+import { PrivateRoutes } from "./utils/PrivateRoutes";
 
 function App() {
   return (
