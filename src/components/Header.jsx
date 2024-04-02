@@ -16,7 +16,8 @@ export function Header() {
   const hideContent = expanded ? "hidden" : "flex";
   const fullScreen = expanded
     ? "h-full justify-center  items-start pt-[150px]"
-    : "h-[150px] flex-col";
+    : "h-[150px] md:h-[250px] flex-col";
+  // :"h-20vh flex-col";
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -28,7 +29,7 @@ export function Header() {
   return (
     <>
       <div
-        className={`title-header flex  ${fullScreen} pb-8 transition-all ease-in-out duration-300`}
+        className={`title-header flex  ${fullScreen} pb-8 transition-all ease-in-out duration-1000`}
       >
         <div
           className={`media-icons h-[50px] w-full justify-end items-center gap-2 p-2 ${hideContent} transition-all ease-in-out delay-1000`}
@@ -48,17 +49,17 @@ export function Header() {
         </div>
         <Link to="/" className="flex items-center justify-center">
           <h1 className="satisfy-regular text-white text-5xl md:text-8xl">
-            Planting a pine
+            PLANTIHOGAR
           </h1>
         </Link>
       </div>
 
       {/* <div className="search-bar-container h-[50px]  bg-fondo"></div> */}
 
-      <div className={`header-main-content`}>
-        <div className={` h-[50px]  items-center ${hideContent}`}>
+      <div className={`header-main-content flex justify-center ${hideContent}`}>
+        {/* <div className={` h-[50px]  items-center ${hideContent}`}>
           <SearchBar />
-        </div>
+        </div> */}
         {/* <SearchBar /> */}
         <Outlet />
       </div>

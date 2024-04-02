@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { auth } from "../fiebase-config.js";
+import { auth } from "../firebase-config.js";
 
 const authUser = React.createContext();
 

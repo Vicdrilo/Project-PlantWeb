@@ -3,9 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { Home } from "./pages/Home";
 import { Header } from "./components/Header";
 import { MainContent } from "./pages/MainContent";
-import { LoginSignup } from "./pages/LoginSignup";
+
 import { Foro } from "./components/Foro";
 import { PrivateRoutes } from "./utils/PrivateRoutes";
+import { Signup } from "./components/Signup";
+import { Login } from "./components/Login";
 
 function App() {
   return (
@@ -16,8 +18,8 @@ function App() {
           <Route path="/" element={<Header />}>
             <Route path="/" element={<MainContent type="inicio" />} />
             <Route path="plantas" element={<MainContent type="plantas" />} />
-            <Route path="login" element={<LoginSignup type="login" />} />
-            <Route path="signup" element={<LoginSignup type="signup" />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
             <Route element={<PrivateRoutes />}>
               <Route path="foro" element={<Foro />} />
             </Route>

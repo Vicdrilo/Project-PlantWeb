@@ -14,16 +14,16 @@ export function SearchBar() {
     <>
       <form
         onSubmit={handleSubmit((data) => console.log(data))}
-        className={`h-[30px] w-full flex items-center mt-1 mx-3`}
+        className={`h-[40px] w-full flex items-center mt-1`}
       >
         <label
           htmlFor="search"
-          className={`input input-bordered h-full w-full bg-verde text-verde-claro flex items-center gap-2`}
+          className={`input input-bordered h-full w-full bg-verde-claro border-2 border-verde text-verde flex items-center gap-2`}
         >
           <input
             name="search"
             type="text"
-            className={`grow cursor-text`}
+            className={`grow cursor-text placeholder-verde`}
             placeholder="Search"
             {...register("search", { required: true })}
           />
@@ -31,7 +31,8 @@ export function SearchBar() {
             type="submit"
             className="h-full flex items-center bg-transparent border-0 focus:outline-none active:outline-none"
           >
-            <img src={whiteSearchIcon} alt="" className="cursor-pointer" />
+            {/* <img src={whiteSearchIcon} alt="" className="cursor-pointer" /> */}
+            <img src={searchIcon} alt="" className="cursor-pointer" />
           </button>
         </label>
       </form>

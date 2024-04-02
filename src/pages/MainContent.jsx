@@ -1,5 +1,6 @@
 import { Plantas } from "../components/main-content-components/Plantas";
 import { Inicio } from "../components/main-content-components/Inicio";
+import { SearchBar } from "../components/features/SearchBar";
 
 export function MainContent({ type }) {
   const content = () => {
@@ -23,5 +24,12 @@ export function MainContent({ type }) {
       return <Plantas />;
     }
   };
-  return <div className="main-ontent-container">{content()}</div>;
+  return (
+    <div className="main-content-container w-full">
+      <div className={` h-[50px]  items-center`}>
+        <SearchBar />
+      </div>
+      {content()}
+    </div>
+  );
 }

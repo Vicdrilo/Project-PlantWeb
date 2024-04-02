@@ -73,6 +73,7 @@
 .login .inputBx input::placeholder {
   color: rgb(255, 255, 255);
 }
+
 .login .links {
   position: relative;
   width: 100%;
