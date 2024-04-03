@@ -8,6 +8,7 @@ import { Foro } from "./components/Foro";
 import { PrivateRoutes } from "./utils/PrivateRoutes";
 import { Signup } from "./components/Signup";
 import { Login } from "./components/Login";
+import { User } from "./pages/User";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="plantas" element={<MainContent type="plantas" />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
+            <Route path="user" element={<User />} />
             <Route element={<PrivateRoutes />}>
               <Route path="foro" element={<Foro />} />
             </Route>
