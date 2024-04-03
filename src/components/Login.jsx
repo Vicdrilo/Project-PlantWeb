@@ -1,20 +1,52 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useAuthUser } from "../context/AuthProvider";
+import { useEffect, useState } from "react";
 import "../styles/Login.css";
 
 export function Login() {
+  //FORM
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  //FIREBASE AUTH
+  const [loginError, setLoginError] = useState(false);
+  const navigate = useNavigate();
+  const { logged, setLogged, signup, login } = useAuthUser();
+
+  const handleSubmitLogin = async (formData) => {
+    // e.preventDefault();
+    try {
+      let user = await login(formData);
+      console.log(user);
+      navigate("/");
+      setLoginError(false);
+      setLogged(user);
+    } catch (err) {
+      if (err.code === "auth/invalid-credential") {
+        setLoginError(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(setLoginError(false), 500);
+  }, [loginError]);
+
+  const showModal = () => {
+    document.getElementById("my_modal_1").showModal();
+  };
+
   return (
-    <div className="rings w-full h-[100vh] rounded-xl md:py-[300px] md:px-[300px] my-[50px] mt-[20px]">
-      <div className="login md:w-1/2">
+    <div className="rings w-full h-[100vh] rounded-xl  my-[50px] mt-[20px]">
+      <div className="login md:w-1/2 md:h-[550px] md:w-[500px]">
         <h2>Ingreso</h2>
         <form
-          onSubmit={handleSubmit(() => {
-            console.log("error: ", errors);
+          onSubmit={handleSubmit((data) => {
+            handleSubmitLogin(data);
           })}
           className="flex flex-col gap-[20px] w-full"
         >
@@ -22,6 +54,9 @@ export function Login() {
             <input
               type="email"
               placeholder="@email"
+              className={`border-2 rounded-xl ${
+                errors.email ? "border-error" : "border-white"
+              }`}
               {...register("email", {
                 required: { value: true, message: "Campo requerido" },
                 pattern: {
@@ -42,6 +77,9 @@ export function Login() {
             <input
               type="password"
               placeholder="Contraseña"
+              className={`border-2 rounded-xl ${
+                errors.password ? "border-error" : "border-white"
+              }`}
               {...register("password", {
                 required: {
                   value: true,
@@ -59,7 +97,11 @@ export function Login() {
             )}
           </div>
           <div className="inputBx">
-            <input type="submit" value="Iniciar sesión" />
+            <input
+              type="submit"
+              value="Iniciar sesión"
+              className={`border-2 rounded-xl`}
+            />
           </div>
         </form>
         <div className="links">
@@ -76,6 +118,19 @@ export function Login() {
           </Link>
         </div>
       </div>
+
+      {loginError && showModal()}
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-xl text-start">Error</h3>
+          <p className="py-4 text-start">El correo o contraseña incorrectos.</p>
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn">Cerrar</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }

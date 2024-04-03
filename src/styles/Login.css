@@ -28,13 +28,14 @@
   align-items: center;
   box-shadow: none;
   border-color: white;
-  background: linear-gradient(45deg, #118c40, #013613);
 }
 
 .login {
   position: absolute;
+  top: 50px;
   width: 300px;
-  height: 100%;
+  /* height: 100%; */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +44,7 @@
 }
 .login h2 {
   font-size: 2em;
-  color: #fff;
+  color: #013613;
 }
 .login .inputBx {
   position: relative;
@@ -54,24 +55,31 @@
   width: 100%;
   padding: 12px 20px;
   background: transparent;
-  border: 2px solid #fff;
-  border-radius: 40px;
+  /* border: 2px solid #fff;
+  border-radius: 40px; */
   font-size: 1.2em;
-  color: #fff;
-  background-color: black;
+  color: #013613;
+  /* background-color: black; */
+  background-color: #e6fcef;
+  border: 2px solid #013613;
   box-shadow: none;
   outline: none;
 }
+.login .inputBx input:focus {
+  background: linear-gradient(45deg, #c7edd6, #90e8b2);
+}
 .login .inputBx input[type="submit"] {
   width: 100%;
-  background: #0078ff;
+  color: #013613;
   /* background: linear-gradient(45deg, #ff357a, #fff172); */
   background: linear-gradient(45deg, #c7edd6, #118c40);
-  border: none;
+  /* border: none; */
+  border: 0.25px solid #013613;
   cursor: pointer;
 }
 .login .inputBx input::placeholder {
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
+  color: #013613;
 }
 
 .login .links {
@@ -81,9 +89,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  gap: 3px;
 }
 .login .links a {
-  color: #fff;
+  color: #013613;
   text-decoration: none;
 }
 
@@ -96,6 +105,11 @@
   padding: 0 20px;
 }
 .login .no-account a {
-  color: #fff;
+  color: #013613;
   text-decoration: none;
+}
+
+.login .no-account a,
+.login .links a {
+  border: 0.25px solid #013613;
 }

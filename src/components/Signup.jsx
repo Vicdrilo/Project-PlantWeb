@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import "../styles/Login.css";
 import { useForm } from "react-hook-form";
+import { useAuthUser } from "../context/AuthProvider";
+import { useEffect, useState } from "react";
 
 export function Signup() {
+  //FORM
   const {
     register,
     handleSubmit,
@@ -10,21 +13,52 @@ export function Signup() {
     watch,
     reset,
   } = useForm();
+
+  //FIREBASE AUTH
+  const [emailError, setEmailError] = useState(false);
+  const { logged, setLogged, signup, login } = useAuthUser();
+  const showModalOk = () => {
+    document.getElementById("my_modal_2").showModal();
+  };
+  const handleSubmitSignup = async (formData) => {
+    try {
+      let user = await signup(formData);
+      console.log(user);
+      setEmailError(false);
+      showModalOk();
+    } catch (err) {
+      console.log("ERROR: ", err.code);
+      if (err.code === "auth/email-already-in-use") {
+        setEmailError(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(setEmailError(false), 500);
+  }, [emailError]);
+
+  const showModalError = () => {
+    document.getElementById("my_modal_1").showModal();
+  };
   return (
     <div className="rings w-full h-[100vh] rounded-xl py-[300px] md:py-[300px] md:px-[300px] mb-[50px] mt-[20px]">
       <div className="login md:w-1/2">
         <h2>Registro</h2>
         <form
           onSubmit={handleSubmit((datos) => {
-            console.log("Datos: ", datos);
+            handleSubmitSignup(datos);
             reset();
           })}
           className="flex flex-col gap-[20px] w-full"
         >
-          <div className="inputBx">
+          {/* <div className="inputBx">
             <input
               type="text"
               placeholder="Nombre"
+              className={`border-2 rounded-xl ${
+                errors.name ? "border-error" : "border-white"
+              }`}
               {...register("name", {
                 required: { value: true, message: "Campo requerido" },
                 maxLength: { value: 40, message: "Elemento demasiado largo" },
@@ -34,10 +68,10 @@ export function Signup() {
                 },
               })}
             />
-            {errors.email && (
+            {errors.name && (
               <div className="flex justify-start">
                 <span className=" text-[#ff6347] text-lg px-2 ">
-                  {errors.email.message}
+                  {errors.name.message}
                 </span>
               </div>
             )}
@@ -46,6 +80,9 @@ export function Signup() {
             <input
               type="text"
               placeholder="Apellidos"
+              className={`border-2 rounded-xl ${
+                errors.surname ? "border-error" : "border-white"
+              }`}
               {...register("surname", {
                 required: { value: true, message: "Campo requerido" },
                 maxLength: { value: 40, message: "Elemento demasiado largo" },
@@ -62,11 +99,14 @@ export function Signup() {
                 </span>
               </div>
             )}
-          </div>
+          </div> */}
           <div className="inputBx">
             <input
               type="email"
               placeholder="@email"
+              className={`border-2 rounded-xl ${
+                errors.email ? "border-error" : "border-white"
+              }`}
               {...register("email", {
                 required: { value: true, message: "Campo requerido" },
                 pattern: {
@@ -87,6 +127,9 @@ export function Signup() {
             <input
               type="password"
               placeholder="Contraseña"
+              className={`border-2 rounded-xl ${
+                errors.password ? "border-error" : "border-white"
+              }`}
               {...register("password", {
                 required: {
                   value: true,
@@ -96,7 +139,7 @@ export function Signup() {
                 pattern: {
                   value:
                     /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()\-_=+{};:,<.>]).+$/,
-                  message: "Formato incorrecto",
+                  message: "Formato incorrecto ([a-z], [A-Z], [0-9], simbolo)",
                 },
               })}
             />
@@ -112,6 +155,9 @@ export function Signup() {
             <input
               type="password"
               placeholder="Repite contraseña"
+              className={`border-2 rounded-xl ${
+                errors.passwordRepeated ? "border-error" : "border-white"
+              }`}
               {...register("passwordRepeated", {
                 required: { value: true, message: "Campo requerido" },
                 validate: (value) => {
@@ -132,14 +178,18 @@ export function Signup() {
             )}
           </div>
           <div className="inputBx">
-            <input type="submit" value="Registrar" />
+            <input
+              type="submit"
+              value="Registrar"
+              className={`border-2 rounded-xl`}
+            />
           </div>
         </form>
         <div className="links">
           <Link to="/" className=" rounded-full w-full">
             Continuar sin cuenta
           </Link>
-          <Link to="/login" className=" rounded-full w-1/3">
+          <Link to="/login" className=" rounded-full w-1/3 px-2">
             Ingreso
           </Link>
         </div>
@@ -149,6 +199,29 @@ export function Signup() {
           </Link>
         </div> */}
       </div>
+      {emailError && showModalError()}
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-xl text-start">Error</h3>
+          <p className="py-4 text-start">El correo ya está registrado.</p>
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn">Cerrar</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <dialog id="my_modal_2" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-xl text-start">Bienvenido!!!</h3>
+          <p className="py-4 text-start">Registro correcto.</p>
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn">Cerrar</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }

@@ -49,7 +49,7 @@ export function Header() {
         </div>
         <Link to="/" className="flex items-center justify-center">
           <h1 className="satisfy-regular text-white text-5xl md:text-8xl">
-            PLANTIHOGAR
+            Potting Plants
           </h1>
         </Link>
       </div>
@@ -62,9 +62,8 @@ export function Header() {
         </div> */}
         {/* <SearchBar /> */}
         <Outlet />
+        <Footer />
       </div>
-
-      <Footer />
     </>
   );
 }
