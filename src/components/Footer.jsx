@@ -24,6 +24,7 @@ export function Footer() {
   const sizeResult = menu ? "h-full" : "hidden";
 
   console.log("logged: ", logged);
+  // console.log("ESTOE ES MIO: ", logged);
   const isLogged =
     logged === null ? (
       <Link

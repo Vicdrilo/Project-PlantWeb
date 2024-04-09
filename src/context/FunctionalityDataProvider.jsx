@@ -19,7 +19,7 @@ export function LogicalDataProvider({ children }) {
     }
   };
 
-  const [logged, setLogged] = useState(false);
+  const [comeFromForum, setComeFromForum] = useState(false);
 
   const values = {
     data,
@@ -29,8 +29,8 @@ export function LogicalDataProvider({ children }) {
     setUser,
     numCard,
     handleCard,
-    logged,
-    setLogged,
+    comeFromForum,
+    setComeFromForum,
   };
   return <dataPovider.Provider value={values}>{children}</dataPovider.Provider>;
 }

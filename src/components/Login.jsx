@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useAuthUser } from "../context/AuthProvider";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../styles/Login.css";
+import { dataPovider } from "../context/FunctionalityDataProvider";
 
 export function Login() {
   //FORM
@@ -15,16 +16,18 @@ export function Login() {
   //FIREBASE AUTH
   const [loginError, setLoginError] = useState(false);
   const navigate = useNavigate();
-  const { logged, setLogged, signup, login } = useAuthUser();
+  const { setLogged, login } = useAuthUser();
+  const { comeFromForum, setComeFromForum } = useContext(dataPovider);
 
   const handleSubmitLogin = async (formData) => {
     // e.preventDefault();
     try {
       let user = await login(formData);
       console.log(user);
-      navigate("/");
+      comeFromForum ? navigate("/foro") : navigate("/");
       setLoginError(false);
       setLogged(user);
+      setComeFromForum(false);
     } catch (err) {
       if (err.code === "auth/invalid-credential") {
         setLoginError(true);
