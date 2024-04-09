@@ -4,7 +4,11 @@ import { useForm } from "react-hook-form";
 import { useAuthUser } from "../context/AuthProvider";
 import { useEffect, useState } from "react";
 
+import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { app } from "../firebase-config";
+
 export function Signup() {
+  const firestore = getFirestore(app);
   //FORM
   const {
     register,
@@ -26,6 +30,14 @@ export function Signup() {
       console.log(user);
       setEmailError(false);
       showModalOk();
+      console.log(user.user.uid);
+      const docuRef = doc(firestore, `/usuarios/${user.user.uid}`);
+      setDoc(docuRef, {
+        nombre: formData.name,
+        apellido: formData.surname,
+        email: formData.email,
+        img_url: "https://files.fm/u/g6ykd5jxn6",
+      });
     } catch (err) {
       console.log("ERROR: ", err.code);
       if (err.code === "auth/email-already-in-use") {
@@ -52,7 +64,7 @@ export function Signup() {
           })}
           className="flex flex-col gap-[20px] w-full"
         >
-          {/* <div className="inputBx">
+          <div className="inputBx">
             <input
               type="text"
               placeholder="Nombre"
@@ -99,7 +111,7 @@ export function Signup() {
                 </span>
               </div>
             )}
-          </div> */}
+          </div>
           <div className="inputBx">
             <input
               type="email"

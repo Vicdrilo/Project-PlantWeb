@@ -23,7 +23,7 @@
   padding: 0;
   text-align: center;
 }
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (min-width: 900px) {
   /* Cubre toda la pantalla del dispositivo */
   #mensaje {
     position: fixed;

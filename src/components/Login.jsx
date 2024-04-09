@@ -4,8 +4,11 @@ import { useAuthUser } from "../context/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import "../styles/Login.css";
 import { dataPovider } from "../context/FunctionalityDataProvider";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { app } from "../firebase-config";
 
 export function Login() {
+  const firestore = getFirestore(app);
   //FORM
   const {
     register,
@@ -19,14 +22,24 @@ export function Login() {
   const { setLogged, login } = useAuthUser();
   const { comeFromForum, setComeFromForum } = useContext(dataPovider);
 
+  async function getUserInfo(uid) {
+    const docuRef = doc(firestore, `/usuarios/${uid}`);
+    const userInfoCrypted = await getDoc(docuRef);
+    const userInfo = userInfoCrypted.data();
+
+    return userInfo;
+  }
   const handleSubmitLogin = async (formData) => {
     // e.preventDefault();
     try {
       let user = await login(formData);
-      console.log(user);
+      console.log("USER AUth: ", user);
       comeFromForum ? navigate("/foro") : navigate("/");
       setLoginError(false);
-      setLogged(user);
+
+      const userInfo = await getUserInfo(user.user.uid);
+      console.log("PRUEBA: ", userInfo);
+      setLogged(userInfo);
       setComeFromForum(false);
     } catch (err) {
       if (err.code === "auth/invalid-credential") {

@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
 import binIcon from "../../assets/icons/bin-icon.svg";
+import { connectFirestoreEmulator } from "firebase/firestore";
 
 export function UserInfoBox({ side, user }) {
   const { logged, setLogged, signup, login } = useAuthUser();
@@ -10,7 +11,7 @@ export function UserInfoBox({ side, user }) {
 
   //Responsive de contenedor
   const stylingSmScreenBoxContainer = "w-[300px] gap-5 p-4 justify-between";
-  const stylingMdScreenBoxContainer = "md:w-[500px]";
+  const stylingMdScreenBoxContainer = "md:w-[650px]";
 
   //Responsive de la imagen
   const stylingSmScreenImg = "h-[100px] w-[100px]";
@@ -34,13 +35,14 @@ export function UserInfoBox({ side, user }) {
       <div
         className={`userInfoContainer flex ${boxDistribution} ${stylingSmScreenBoxContainer} ${stylingMdScreenBoxContainer}  items-center rounded-2xl shadow-xl border-2 border-verde bg-verde-claro `}
       >
-        <div className={`${imgBoxStyle} bg-verde`}>
-          {/* <img src="" alt="" /> */}
+        <div className={`${imgBoxStyle} `}>
+          {console.log("FOTO: ", logged.img_url)}
+          <img src={logged.img_url} alt="JA!!!" />
         </div>
         <div
           className={`info ${
-            user ? "md:w-1/2 md:text-xl" : "w-1/2"
-          } flex flex-col gap-3`}
+            user ? "md:w-2/3 md:text-2xl" : "w-1/2"
+          } flex flex-col gap-5`}
         >
           <ul
             className={`${
@@ -88,16 +90,19 @@ const logout = (setLogged) => {
 };
 
 function User() {
+  const { logged, setLogged, signup, login } = useAuthUser();
+  console.log("<User/> ", logged);
   return (
     <>
-      <li>Victor</li>
-      <li>Aguado</li>
-      <li>kdsajflkdsjflsa</li>
+      <li>{logged.nombre}</li>
+      <li>{logged.apellido}</li>
+      <li>{logged.email}</li>
     </>
   );
 }
 
 function Plant() {
+  const { logged, setLogged, signup, login } = useAuthUser();
   return (
     <>
       <li>Planta</li>

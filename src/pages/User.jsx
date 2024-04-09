@@ -5,7 +5,7 @@ export function User() {
     <>
       {/* <h1>Perfril de usuario</h1> */}
       <div className="flex flex-col gap-4">
-        <UserInfoBox />
+        <UserInfoBox user />
       </div>
     </>
   );
