@@ -4,20 +4,21 @@ import { Img } from "./features/Img";
 import "../styles/Card.css";
 
 import desFavIcon from "../assets/icons/fav-icon.svg";
-import actFavIcon from "../assets/icons/fav-icon.svg";
+import actFavIcon from "../assets/icons/fav-active-icon.svg";
 import arrowLeft from "../assets/icons/arrow-left-icon.svg";
 import arrowLeftLight from "../assets/icons/arrow-left-light-icon.svg";
 import arrowRight from "../assets/icons/arrow-right-icon.svg";
 import arrowRightLight from "../assets/icons/arrow-right-light-icon.svg";
+
 import { useAuthUser } from "../context/AuthProvider";
 import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 import { useFirestore } from "../context/Firestore";
+import { app } from "../firebase/firebase-config";
 
 export function Card({ type }) {
   const temaImg = type;
   const { data, numCard, handleCard } = useContext(dataPovider);
 
-  console.log(numCard);
   const dataForCard = dataArrayForCard(data, temaImg)[numCard];
 
   return (
@@ -40,6 +41,7 @@ const dataArrayForCard = (data, temaImg) => {
   }
 };
 
+//COMPONENTE DONDE SE TRABAJA LA INFORMACIÓN QUE SE MOSTRARÁ EN LA CARD
 function DataCard({ dataForCard, handleCard, data }) {
   const btnStyle = "bg-verde hover:bg-verde text-verde-claro ";
   const [arrowL, setArrowL] = useState(false);
@@ -55,19 +57,38 @@ function DataCard({ dataForCard, handleCard, data }) {
   const bgLStyle = arrowL ? "bg-verde-claro" : "";
 
   const { logged, setLogged } = useAuthUser();
-  const { firestore } = useFirestore();
 
-  const favoriteDisable = logged && (
-    <div
-      className={`absolute top-3 right-2 fav-star1 animate-bounce rounded-full bg-white p-2 shadow-lg shadow-gray`}
-      onClick={() =>
-        addToFavoriteList(dataForCard, logged, firestore, setLogged)
-      }
-    >
-      {" "}
-      <img src={desFavIcon} alt="" className=" cursor-pointer" />{" "}
-    </div>
-  );
+  useEffect(() => {
+    if (logged !== null) {
+      const firestore = getFirestore(app);
+      const ref = doc(firestore, `/usuarios/${logged.id}`);
+      setDoc(ref, logged);
+    }
+  }, [logged]);
+
+  const favoriteDisable =
+    logged !== null && logged.plantas.includes(dataForCard) ? (
+      <div
+        className={`absolute top-3 right-2 fav-star1 rounded-full bg-white p-2 shadow-lg shadow-gray`}
+        onClick={() => deleteFromFavoriteList(dataForCard, logged, setLogged)}
+      >
+        {" "}
+        <img src={actFavIcon} alt="" className=" cursor-pointer" />{" "}
+      </div>
+    ) : logged === null ? (
+      ""
+    ) : (
+      <div
+        className={`absolute top-3 right-2 fav-star1 animate-bounce rounded-full bg-white p-2 shadow-lg shadow-gray`}
+        onClick={() => {
+          addToFavoriteList(dataForCard, logged, setLogged);
+        }}
+      >
+        {" "}
+        <img src={desFavIcon} alt="" className=" cursor-pointer" />{" "}
+      </div>
+    );
+
   return (
     <>
       <div
@@ -123,26 +144,49 @@ function DataCard({ dataForCard, handleCard, data }) {
   );
 }
 
-async function addToFavoriteList(plant, logged, firestore, setLogged) {
-  console.log("logged al inicio de addToFavoriteList: ", logged);
-  const docuRef = doc(firestore, `/usuarios/${logged.id}`);
-  logged.plantas.push(plant);
+function addToFavoriteList(plant, logged, setLogged) {
+  let nuevoArray = [...logged.plantas];
+  nuevoArray.push(plant);
 
-  setDoc(docuRef, {
-    id: logged.id,
-    nombre: logged.name,
-    apellido: logged.surname,
-    email: logged.email,
-    img_url: logged.img,
-    plantas: logged.plantas,
-  });
   setLogged({
     id: logged.id,
-    nombre: logged.name,
-    apellido: logged.surname,
+    nombre: logged.nombre,
+    apellido: logged.apellido,
     email: logged.email,
-    img_url: logged.img,
-    plantas: logged.plantas,
+    img_url: logged.img_url,
+    plantas: nuevoArray,
   });
-  console.log("Despues de añadir plantas: ", logged);
 }
+function deleteFromFavoriteList(plant, logged, setLogged) {
+  let nuevoArray = [...logged.plantas];
+  nuevoArray = nuevoArray.filter((planta) => planta !== plant);
+
+  setLogged({
+    id: logged.id,
+    nombre: logged.nombre,
+    apellido: logged.apellido,
+    email: logged.email,
+    img_url: logged.img_url,
+    plantas: nuevoArray,
+  });
+}
+
+// const docuRef = doc(firestore, `/usuarios/${logged.id}`);
+// logged.plantas.push(plant);
+
+// await setDoc(docuRef, {
+//   id: logged.id,
+//   nombre: logged.name,
+//   apellido: logged.surname,
+//   email: logged.email,
+//   img_url: logged.img,
+//   plantas: logged.plantas,
+// });
+// setLogged({
+//   id: logged.id,
+//   nombre: logged.name,
+//   apellido: logged.surname,
+//   email: logged.email,
+//   img_url: logged.img,
+//   plantas: logged.plantas,
+// });

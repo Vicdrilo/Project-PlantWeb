@@ -1,5 +1,5 @@
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { app } from "../firebase-config";
+import { app } from "../firebase/firebase-config";
 import React, { useContext } from "react";
 
 const dataBase = React.createContext();

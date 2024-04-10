@@ -5,7 +5,7 @@ import { useAuthUser } from "../context/AuthProvider";
 import { useEffect, useState } from "react";
 
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { app } from "../firebase-config";
+import { app } from "../firebase/firebase-config";
 
 export function Signup() {
   const navigate = useNavigate();

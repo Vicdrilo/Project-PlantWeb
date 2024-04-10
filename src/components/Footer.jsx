@@ -23,8 +23,6 @@ export function Footer() {
   const heightBtns = menu ? "h-[40px] border-b-2 border-gray-light" : "h-full";
   const sizeResult = menu ? "h-full" : "hidden";
 
-  console.log("logged: ", logged);
-  // console.log("ESTOE ES MIO: ", logged);
   const isLogged =
     logged === null ? (
       <Link

@@ -9,28 +9,29 @@ export function LogicalDataProvider({ children }) {
 
   const [numCard, setNumCard] = useState(0);
 
-  const handleCard = (num, datos) => {
-    if (numCard === 0 && num === -1) {
-      setNumCard(datos.length + num);
-    } else if (numCard + num === datos.length) {
-      setNumCard(0);
-    } else {
-      setNumCard(numCard + num);
-    }
-  };
-  // const handleCard = (num, length) => {
-  //   console.log("numCard === 0 && num === -1: ", numCard === 0 && num === -1);
-  //   console.log("numCard + num === length: ", numCard + num === length);
-
+  // const handleCard = (num, datos) => {
   //   if (numCard === 0 && num === -1) {
-  //     console.log("length - 1: ", length);
-  //     setNumCard(length - 1);
-  //   } else if (numCard + num === length) {
+  //     setNumCard(datos.length + num);
+  //   } else if (numCard + num === datos.length) {
   //     setNumCard(0);
   //   } else {
   //     setNumCard(numCard + num);
   //   }
   // };
+  const handleCard = (num, length) => {
+    console.log("LENGTH: ", length);
+    console.log("numCard === 0 && num === -1: ", numCard === 0 && num === -1);
+    console.log("numCard + num === length: ", numCard + num === length);
+
+    if (numCard === 0 && num === -1) {
+      console.log("length - 1: ", length);
+      setNumCard(length - 1);
+    } else if (numCard + num === length) {
+      setNumCard(0);
+    } else {
+      setNumCard(numCard + num);
+    }
+  };
 
   const [comeFromForum, setComeFromForum] = useState(false);
 

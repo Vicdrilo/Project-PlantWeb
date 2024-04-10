@@ -1,6 +1,6 @@
 import { useAuthUser } from "../../context/AuthProvider";
 import { signOut } from "firebase/auth";
-import { auth } from "../../firebase-config";
+import { auth } from "../../firebase/firebase-config";
 import { useNavigate } from "react-router-dom";
 import binIcon from "../../assets/icons/bin-icon.svg";
 import { connectFirestoreEmulator } from "firebase/firestore";

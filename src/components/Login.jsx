@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import "../styles/Login.css";
 import { dataPovider } from "../context/FunctionalityDataProvider";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { app } from "../firebase-config";
+import { app } from "../firebase/firebase-config";
 
 export function Login() {
   const firestore = getFirestore(app);
@@ -39,7 +39,6 @@ export function Login() {
       setLoginError(false);
 
       const userInfo = await getUserInfo(user.user.uid);
-      console.log("PRUEBA: ", userInfo);
       setLogged(userInfo);
       setComeFromForum(false);
     } catch (err) {

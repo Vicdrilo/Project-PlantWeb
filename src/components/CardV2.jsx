@@ -28,26 +28,53 @@ export function Card({ type }) {
   console.log(numCard);
   //   const dataForCard = dataArrayForCard(temaImg).numCard;
 
+  // const data = getData(firestore, temaImg, numCard);
+  // const num = getLength(firestore, temaImg);
+
+  const [data, setData] = useState(null);
+  const [length, setLength] = useState(0);
+  console.log("DATOS USEEFFECT: ", data);
+  console.log("LENGTH USEEFFECT: ", length);
+  useEffect(() => {
+    const fetchData = async () => {
+      const datos = await getData(firestore, temaImg, numCard, setData);
+      setData(datos);
+    };
+
+    fetchData();
+  }, [firestore, temaImg, numCard]);
+
+  useEffect(() => {
+    const fetchLength = async () => {
+      const num = await getLength(firestore, temaImg);
+      setLength(num);
+    };
+
+    fetchLength();
+  }, [firestore, temaImg]);
+
   return (
     <>
-      <DataCard
-        dataForCard={getData(firestore, temaImg, numCard)}
-        handleCard={handleCard}
-        data={getLength(firestore, temaImg)}
-      />
+      <DataCard dataForCard={data} handleCard={handleCard} data={length} />
     </>
   );
 }
-async function getData(firestore, temaImg, numCard) {
-  console.log(numCard);
-
+async function getData(firestore, temaImg, numCard, setData) {
   console.log(numCard);
   const docuRef = doc(firestore, `/${temaImg}/${numCard}`);
   const data = await getDoc(docuRef);
   const planta = data.data();
 
-  console.log("DATA: ", planta);
-  return planta;
+  console.log("PLANTA DENTRO GETDATA: ", planta);
+  setData(planta);
+  // try {
+  //   const querySnapshot = await getDocs(collection(firestore, temaImg));
+  //   const dataDocument = querySnapshot.docs[numCard].data(); // Accede a los datos usando .docs[numCard]
+
+  //   return dataDocument;
+  // } catch (error) {
+  //   console.error("Error al obtener los datos:", error);
+  // }
 }
 
 async function getLength(firestore, temaImg) {
@@ -58,7 +85,9 @@ async function getLength(firestore, temaImg) {
       `Número de documentos en la colección "${temaImg}":`,
       numberOfDocuments,
       `typeOf: `,
-      typeof numberOfDocuments
+      typeof numberOfDocuments,
+      ". QUERYSNAPSHOT: ",
+      querySnapshot
     );
 
     return numberOfDocuments;
