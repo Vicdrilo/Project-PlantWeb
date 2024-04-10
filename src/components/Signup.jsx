@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 import { useForm } from "react-hook-form";
 import { useAuthUser } from "../context/AuthProvider";
@@ -8,6 +8,7 @@ import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { app } from "../firebase-config";
 
 export function Signup() {
+  const navigate = useNavigate();
   const firestore = getFirestore(app);
   //FORM
   const {
@@ -20,24 +21,31 @@ export function Signup() {
 
   //FIREBASE AUTH
   const [emailError, setEmailError] = useState(false);
-  const { logged, setLogged, signup, login } = useAuthUser();
+  const { signup } = useAuthUser();
   const showModalOk = () => {
     document.getElementById("my_modal_2").showModal();
+
+    navigate("/login");
   };
   const handleSubmitSignup = async (formData) => {
     try {
       let user = await signup(formData);
       console.log(user);
       setEmailError(false);
-      showModalOk();
+
       console.log(user.user.uid);
       const docuRef = doc(firestore, `/usuarios/${user.user.uid}`);
       setDoc(docuRef, {
+        id: user.user.uid,
         nombre: formData.name,
         apellido: formData.surname,
         email: formData.email,
-        img_url: "https://files.fm/u/g6ykd5jxn6",
+        // img_url: "https://i.ibb.co/s6CN3Fs/superman.webp",
+        img_url: "https://i.ibb.co/64TJc7s/blank-avatar-photo.webp",
+        plantas: [],
       });
+
+      showModalOk();
     } catch (err) {
       console.log("ERROR: ", err.code);
       if (err.code === "auth/email-already-in-use") {

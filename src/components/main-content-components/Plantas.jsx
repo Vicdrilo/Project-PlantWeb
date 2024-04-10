@@ -1,4 +1,5 @@
 import { Card } from "../Card";
+// import { Card } from "../CardV2";
 
 export function Plantas() {
   return (

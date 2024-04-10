@@ -9,36 +9,80 @@ import arrowLeft from "../assets/icons/arrow-left-icon.svg";
 import arrowLeftLight from "../assets/icons/arrow-left-light-icon.svg";
 import arrowRight from "../assets/icons/arrow-right-icon.svg";
 import arrowRightLight from "../assets/icons/arrow-right-light-icon.svg";
-import { useAuthUser } from "../context/AuthProvider";
-import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
+
+import {
+  doc,
+  getCountFromServer,
+  getDoc,
+  count,
+  collection,
+  getDocs,
+} from "firebase/firestore";
 import { useFirestore } from "../context/Firestore";
 
 export function Card({ type }) {
   const temaImg = type;
-  const { data, numCard, handleCard } = useContext(dataPovider);
+  const { numCard, handleCard } = useContext(dataPovider);
+  const { firestore } = useFirestore();
 
   console.log(numCard);
-  const dataForCard = dataArrayForCard(data, temaImg)[numCard];
+  //   const dataForCard = dataArrayForCard(temaImg).numCard;
 
   return (
     <>
       <DataCard
-        dataForCard={dataForCard}
+        dataForCard={getData(firestore, temaImg, numCard)}
         handleCard={handleCard}
-        data={dataArrayForCard(data, temaImg)}
+        data={getLength(firestore, temaImg)}
       />
     </>
   );
 }
+async function getData(firestore, temaImg, numCard) {
+  console.log(numCard);
 
-const dataArrayForCard = (data, temaImg) => {
-  if (temaImg === "plantas") {
-    return data.objects.plants;
+  console.log(numCard);
+  const docuRef = doc(firestore, `/${temaImg}/${numCard}`);
+  const data = await getDoc(docuRef);
+  const planta = data.data();
+
+  console.log("DATA: ", planta);
+  return planta;
+}
+
+async function getLength(firestore, temaImg) {
+  try {
+    const querySnapshot = await getDocs(collection(firestore, temaImg));
+    const numberOfDocuments = querySnapshot.size;
+    console.log(
+      `Número de documentos en la colección "${temaImg}":`,
+      numberOfDocuments,
+      `typeOf: `,
+      typeof numberOfDocuments
+    );
+
+    return numberOfDocuments;
+  } catch (error) {
+    console.error("Error al contar los documentos:", error);
   }
-  if (temaImg === "materials") {
-    return data.objects.materials;
-  }
-};
+}
+
+// const dataArrayForCard = async (temaImg) => {
+//   const firestore = getFirestore(app);
+
+//   if (temaImg === "plantas") {
+//     const docuRef = doc(firestore, "/plantas");
+//     const datos = await getDoc(docuRef);
+//     const plantas = datos.data();
+//     return plantas;
+//   }
+//   if (temaImg === "materials") {
+//     const docuRef = doc(firestore, "/materials");
+//     const datos = await getDoc(docuRef);
+//     const materials = datos.data();
+//     return materials;
+//   }
+// };
 
 function DataCard({ dataForCard, handleCard, data }) {
   const btnStyle = "bg-verde hover:bg-verde text-verde-claro ";
@@ -54,31 +98,25 @@ function DataCard({ dataForCard, handleCard, data }) {
   const bgRStyle = arrowR ? "bg-verde-claro" : "";
   const bgLStyle = arrowL ? "bg-verde-claro" : "";
 
-  const { logged, setLogged } = useAuthUser();
-  const { firestore } = useFirestore();
-
-  const favoriteDisable = logged && (
-    <div
-      className={`absolute top-3 right-2 fav-star1 animate-bounce rounded-full bg-white p-2 shadow-lg shadow-gray`}
-      onClick={() =>
-        addToFavoriteList(dataForCard, logged, firestore, setLogged)
-      }
-    >
-      {" "}
-      <img src={desFavIcon} alt="" className=" cursor-pointer" />{" "}
-    </div>
-  );
   return (
     <>
       <div
         className={`card w-[250px] h-[550px] md:w-[400px] md:h-[750px] glass p-2  bg-white`}
       >
         <figure className="h-2/2 w-full">
-          <Img
+          <img
+            src={dataForCard.img}
+            alt={dataForCard.name}
+            className={`rounded-lg mix-blend-multiply w-full h-[300px] md:h-[400px]`}
+          />
+          {/* <Img
             name={dataForCard.img}
             className="w-full h-[300px] md:h-[400px]"
-          />
-          {favoriteDisable}
+          /> */}
+          <div className="absolute top-3 right-2 fav-star1 animate-bounce rounded-full bg-white p-2 shadow-lg shadow-gray">
+            {" "}
+            <img src={desFavIcon} alt="" className=" cursor-pointer" />{" "}
+          </div>
         </figure>
         <div className="h-1/3 p-2 card-body text-start">
           <h2 className="card-title text-2xl text-verde">{dataForCard.name}</h2>
@@ -121,28 +159,4 @@ function DataCard({ dataForCard, handleCard, data }) {
       </div>
     </>
   );
-}
-
-async function addToFavoriteList(plant, logged, firestore, setLogged) {
-  console.log("logged al inicio de addToFavoriteList: ", logged);
-  const docuRef = doc(firestore, `/usuarios/${logged.id}`);
-  logged.plantas.push(plant);
-
-  setDoc(docuRef, {
-    id: logged.id,
-    nombre: logged.name,
-    apellido: logged.surname,
-    email: logged.email,
-    img_url: logged.img,
-    plantas: logged.plantas,
-  });
-  setLogged({
-    id: logged.id,
-    nombre: logged.name,
-    apellido: logged.surname,
-    email: logged.email,
-    img_url: logged.img,
-    plantas: logged.plantas,
-  });
-  console.log("Despues de añadir plantas: ", logged);
 }

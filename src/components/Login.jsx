@@ -26,7 +26,8 @@ export function Login() {
     const docuRef = doc(firestore, `/usuarios/${uid}`);
     const userInfoCrypted = await getDoc(docuRef);
     const userInfo = userInfoCrypted.data();
-
+    userInfo.id = uid;
+    console.log("USERINFO: ", userInfo);
     return userInfo;
   }
   const handleSubmitLogin = async (formData) => {

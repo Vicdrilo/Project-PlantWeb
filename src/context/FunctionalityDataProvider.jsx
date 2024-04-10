@@ -18,6 +18,19 @@ export function LogicalDataProvider({ children }) {
       setNumCard(numCard + num);
     }
   };
+  // const handleCard = (num, length) => {
+  //   console.log("numCard === 0 && num === -1: ", numCard === 0 && num === -1);
+  //   console.log("numCard + num === length: ", numCard + num === length);
+
+  //   if (numCard === 0 && num === -1) {
+  //     console.log("length - 1: ", length);
+  //     setNumCard(length - 1);
+  //   } else if (numCard + num === length) {
+  //     setNumCard(0);
+  //   } else {
+  //     setNumCard(numCard + num);
+  //   }
+  // };
 
   const [comeFromForum, setComeFromForum] = useState(false);
 

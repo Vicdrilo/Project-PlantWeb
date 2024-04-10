@@ -10,7 +10,7 @@ export function UserInfoBox({ side, user }) {
   const navigate = useNavigate();
 
   //Responsive de contenedor
-  const stylingSmScreenBoxContainer = "w-[300px] gap-5 p-4 justify-between";
+  const stylingSmScreenBoxContainer = "w-10/11 gap-5 p-4 justify-between";
   const stylingMdScreenBoxContainer = "md:w-[650px]";
 
   //Responsive de la imagen
@@ -37,7 +37,11 @@ export function UserInfoBox({ side, user }) {
       >
         <div className={`${imgBoxStyle} `}>
           {console.log("FOTO: ", logged.img_url)}
-          <img src={logged.img_url} alt="JA!!!" />
+          <img
+            src={logged.img_url}
+            alt="JA!!!"
+            className={`${user && "rounded-full"} w-full h-full`}
+          />
         </div>
         <div
           className={`info ${
