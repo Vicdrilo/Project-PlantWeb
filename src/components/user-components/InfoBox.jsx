@@ -4,8 +4,18 @@ import { auth } from "../../firebase/firebase-config";
 import { useNavigate } from "react-router-dom";
 import binIcon from "../../assets/icons/bin-icon.svg";
 import { connectFirestoreEmulator } from "firebase/firestore";
+import { useState } from "react";
+import { Img } from "../features/Img";
 
 export function UserInfoBox({ side, user }) {
+  /**
+   * Crea el contenedor donde aparecera la información relacionada con el
+   * usuario, ya sea datos personales visibles o lista favoritos o cualquier
+   * otra interacción del usuario que sea almacenable y mostrable.
+   *
+   * @param side - Boolean. Si es true la imagen se verá en la parte izquierda del contenedor.
+   * @param user - Boolean. Si es true la imagen se verá con borde totalmente redondeado y tendrá el botón para desconectarse.
+   */
   const { logged, setLogged, signup, login } = useAuthUser();
   const navigate = useNavigate();
 
@@ -23,13 +33,21 @@ export function UserInfoBox({ side, user }) {
   const imgBoxStyle = user
     ? `rounded-full self-start  ${stylingSmScreenImg} ${stylingMdScreenImg}`
     : `w-1/2 h-[300px]`;
-  //if user is true the personal data will appear, otherwise will appear favorite plants list
-  const showSomeInfo = () => {
-    if (user) {
-      return <></>;
+
+  //State control acordeon
+  const [numPlant, setNumPlant] = useState(0);
+  //handlePlant -> controla el paso de las diapositivas en el acordeón
+  const handlePlant = (direction) => {
+    if (direction === -1 && numPlant === 0) {
+      setNumPlant(logged.plantas.length - 1);
+    } else if (direction === 1 && numPlant === logged.plantas.length - 1) {
+      setNumPlant(0);
+    } else {
+      setNumPlant(numPlant + direction);
     }
   };
 
+  const plant = logged.plantas[numPlant];
   return (
     <>
       <div
@@ -37,11 +55,15 @@ export function UserInfoBox({ side, user }) {
       >
         <div className={`${imgBoxStyle} `}>
           {console.log("FOTO: ", logged.img_url)}
-          <img
-            src={logged.img_url}
-            alt="JA!!!"
-            className={`${user && "rounded-full"} w-full h-full`}
-          />
+          {user ? (
+            <img
+              src={logged.img_url}
+              alt="JA!!!"
+              className={`rounded-full w-full h-full`}
+            />
+          ) : (
+            <Img name={plant.img} className="w-full h-full" />
+          )}
         </div>
         <div
           className={`info ${
@@ -55,7 +77,7 @@ export function UserInfoBox({ side, user }) {
                 : "flex flex-col justify-end text-start"
             } bg-gradient-to-r from-[#c7edd6] to-[#90e8b2] rounded-xl p-2`}
           >
-            {user ? <User /> : <Plant />}
+            {user ? <User logged={logged} /> : <Plant plant={plant} />}
           </ul>
           <div className={`${!user && "hidden"} self-end`}>
             <button
@@ -93,8 +115,7 @@ const logout = (setLogged) => {
   setLogged(null);
 };
 
-function User() {
-  const { logged, setLogged, signup, login } = useAuthUser();
+function User({ logged }) {
   console.log("<User/> ", logged);
   return (
     <>
@@ -105,13 +126,12 @@ function User() {
   );
 }
 
-function Plant() {
-  const { logged, setLogged, signup, login } = useAuthUser();
+function Plant({ plant }) {
   return (
     <>
-      <li>Planta</li>
-      <li>kjdsaflkdslkfds</li>
-      <li>kjfdalkas</li>
+      <li className="text-xl">{plant.name}</li>
+      <li>{plant.advices}</li>
+      <li>Dificultad: {plant.ranking}</li>
     </>
   );
 }
