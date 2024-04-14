@@ -2,7 +2,7 @@ import { UserInfoBox } from "../components/user-components/InfoBox";
 import { useAuthUser } from "../context/AuthProvider";
 
 export function User() {
-  const [logged] = useAuthUser();
+  const {logged} = useAuthUser();
 
   return (
     <>
@@ -13,7 +13,7 @@ export function User() {
           user - Si es true la imagen se verá con borde totalmente redondeado y tendrá el botón para desconectarse. */}
         <UserInfoBox user />
 
-        {logged.plants.length > 0 && <UserInfoBox side />}
+        {logged.plantas.length > 0 && <UserInfoBox side />}
       </div>
     </>
   );

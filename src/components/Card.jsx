@@ -90,7 +90,7 @@ function DataCard({ dataForCard, handleCard, data }) {
     );
 
   return (
-    <>
+    
       <div
         className={`card w-[250px] h-[550px] md:w-[400px] md:h-[750px] glass p-2  bg-white`}
       >
@@ -140,7 +140,7 @@ function DataCard({ dataForCard, handleCard, data }) {
           </div>
         </div>
       </div>
-    </>
+    
   );
 }
 
