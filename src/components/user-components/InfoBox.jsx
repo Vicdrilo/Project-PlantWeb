@@ -1,7 +1,7 @@
 import { useAuthUser } from "../../context/AuthProvider";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase-config";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import binIcon from "../../assets/icons/bin-icon.svg";
 import { connectFirestoreEmulator } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -24,15 +24,17 @@ export function UserInfoBox({ side, user }) {
    * @param side - Boolean. Si es true la imagen se verá en la parte izquierda del contenedor.
    * @param user - Boolean. Si es true la imagen se verá con borde totalmente redondeado y tendrá el botón para desconectarse.
    */
-  const { logged, setLogged, signup, login } = useAuthUser();
+  const { logged, setLogged, lengthPlantList, setLengthPlantList } =
+    useAuthUser();
   const navigate = useNavigate();
 
   //Responsive de contenedor
   const stylingSmScreenBoxContainer = "w-10/11 gap-2 p-2";
-  const stylingMdScreenBoxContainer = "md:w-[650px] md:gap-5 md:p-4 md:justify-between";
+  const stylingMdScreenBoxContainer =
+    "md:w-[650px] md:gap-5 md:p-4 md:justify-between";
 
   //Responsive de la imagen
-  const stylingSmScreenImg = "h-[100px] w-[100px]";
+  const stylingSmScreenImg = "h-full w-full";
   const stylingMdScreenImg = "md:w-[200px] md:h-[200px]";
 
   //if side is true the box distribution will be right
@@ -42,14 +44,15 @@ export function UserInfoBox({ side, user }) {
     ? `rounded-full self-start  ${stylingSmScreenImg} ${stylingMdScreenImg}`
     : `w-1/2 self-start ${side && "flex justify-end"}`;
 
-    const [ lengthPlantList, setLengthPlantList ] = useState(logged.plantas.length)
-  const estilosPagina = `${
-    user && "mt-[50px] md:mt-[100px]"
-  } ${lengthPlantList === 0 ? user && "mb-[250px] md:mb-[600px]" :!user && "mb-[100px] md:mb-[200px]" }`
+  const estilosPagina = `${user && "mt-[50px] md:mt-[100px]"} ${
+    lengthPlantList === 0
+      ? user && "mb-[250px] md:mb-[600px]"
+      : !user && "mb-[100px] md:mb-[200px]"
+  }`;
 
   //State control acordeon
   const [numPlant, setNumPlant] = useState(0);
-  
+
   //handlePlant -> controla el paso de las diapositivas en el acordeón
   const handlePlant = (direction) => {
     if (direction === -1 && numPlant === 0) {
@@ -61,7 +64,7 @@ export function UserInfoBox({ side, user }) {
     }
   };
 
-  const [ plant, setPlant ] = useState(logged.plantas[numPlant]);
+  const [plant, setPlant] = useState(logged.plantas[numPlant]);
   console.log("PLANT = logged.plantas[numPlant]: ", plant);
 
   //funcionalidad arrow btns
@@ -79,9 +82,9 @@ export function UserInfoBox({ side, user }) {
   const bgLStyle = arrowL ? "bg-verde-claro" : "";
 
   //control a la hora de que logged cambie
-  useEffect(()=>{
+  useEffect(() => {
     setPlant(logged.plantas[numPlant]);
-    setLengthPlantList(logged.plantas.length)
+    setLengthPlantList(logged.plantas.length);
     console.log("PLANT = logged.plantas[numPlant]: ", plant);
   }, [logged, numPlant, plant, lengthPlantList]);
 
@@ -126,7 +129,7 @@ export function UserInfoBox({ side, user }) {
           ) : (
             <Img
               name={plant.img}
-              className="w-[115px] h-[170px] md:w-[200px] md:h-[250px] "
+              className="w-full h-[170px] md:w-[200px] md:h-[250px] "
             />
           )}
         </div>
@@ -161,30 +164,28 @@ export function UserInfoBox({ side, user }) {
               className={`w-[2.3rem] px-2 text-sm border-2 border-[#db8272] rounded-xl text-verde hover:border-[#fa2702] `}
               onClick={() => {
                 deleteFromFavoriteList(plant, logged, setLogged);
-                
               }}
             >
               <img src={binIcon} alt="" />
             </button>
           </div>
         </div>
-        
       </div>
       <div className={`${hiddenOnUser} flex justify-center items-center`}>
-          <button
-            className={`bg-verde outline-verde ${bgRStyle} prev-btn rounded-md md:rounded-full h-[1.25rem] md:h-[2rem] md:min-h-[2rem] w-[1.25rem]  md:w-[2rem] text-2xl flex justify-center items-center px-[2px] md:p-0`}
-            onClick={() => {
-              setArrowR(true);
-              handlePlant(1);
-            }}
-          >
-            {arrowR ? (
-              <img src={arrowRight} alt="" />
-            ) : (
-              <img src={arrowRightLight} alt="" />
-            )}
-          </button>
-        </div>
+        <button
+          className={`bg-verde outline-verde ${bgRStyle} prev-btn rounded-md md:rounded-full h-[1.25rem] md:h-[2rem] md:min-h-[2rem] w-[1.25rem]  md:w-[2rem] text-2xl flex justify-center items-center px-[2px] md:p-0`}
+          onClick={() => {
+            setArrowR(true);
+            handlePlant(1);
+          }}
+        >
+          {arrowR ? (
+            <img src={arrowRight} alt="" />
+          ) : (
+            <img src={arrowRightLight} alt="" />
+          )}
+        </button>
+      </div>
     </div>
   );
 }
@@ -211,12 +212,12 @@ function Plant({ plant }) {
       <li className="md:text-3xl">{plant.name}</li>
       {/* <li>{plant.advices}</li> */}
       <li className="">Dificultad: {plant.ranking}/10</li>
-      <li className="text-[10px] md:text-lg">Más info...</li>
+      <li className="text-[10px] md:text-lg">
+        <Link to={`/plantas/${plant.id}`}>Más info...</Link>
+      </li>
     </>
   );
 }
-
-
 
 function deleteFromFavoriteList(plant, logged, setLogged) {
   let nuevoArray = [...logged.plantas];

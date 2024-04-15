@@ -19,7 +19,8 @@ export function Login() {
   //FIREBASE AUTH
   const [loginError, setLoginError] = useState(false);
   const navigate = useNavigate();
-  const { setLogged, login } = useAuthUser();
+  const { setLogged, login, lengthPlantList, setLengthPlantList } =
+    useAuthUser();
   const { comeFromForum, setComeFromForum } = useContext(dataPovider);
 
   async function getUserInfo(uid) {
@@ -31,7 +32,6 @@ export function Login() {
     return userInfo;
   }
   const handleSubmitLogin = async (formData) => {
-    // e.preventDefault();
     try {
       let user = await login(formData);
       console.log("USER AUth: ", user);
@@ -40,6 +40,7 @@ export function Login() {
 
       const userInfo = await getUserInfo(user.user.uid);
       setLogged(userInfo);
+      setLengthPlantList(userInfo.plantas.length);
       setComeFromForum(false);
     } catch (err) {
       if (err.code === "auth/invalid-credential") {

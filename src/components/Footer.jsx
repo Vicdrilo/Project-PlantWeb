@@ -11,9 +11,6 @@ import { NavBar } from "./NavBar";
 import { useAuthUser } from "../context/AuthProvider";
 
 export function Footer() {
-  //Ahora en context
-  //   const [search, setSearch] = useState(false);
-  //   const [user, setUser] = useState(false);
   const { menu, setMenu } = useContext(dataPovider);
   const { logged } = useAuthUser();
 

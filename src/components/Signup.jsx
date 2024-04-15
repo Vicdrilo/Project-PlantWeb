@@ -213,11 +213,6 @@ export function Signup() {
             Ingreso
           </Link>
         </div>
-        {/* <div className="no-account">
-          <Link to="/" className=" rounded-full w-full">
-            Continue with no account
-          </Link>
-        </div> */}
       </div>
       {emailError && showModalError()}
       <dialog id="my_modal_1" className="modal">

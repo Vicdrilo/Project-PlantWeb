@@ -1,14 +1,13 @@
 import "../styles/Header.css";
 import { Link, Outlet } from "react-router-dom";
 import { Footer } from "../components/Footer";
-import { SearchBar } from "./features/SearchBar";
+
 import mediaIcon from "../assets/icons/media-icons/Vector.svg";
 import mediaIcon1 from "../assets/icons/media-icons/Vector-1.svg";
 import mediaIcon2 from "../assets/icons/media-icons/Vector-2.svg";
 import mediaIcon3 from "../assets/icons/media-icons/Vector-3.svg";
 
-import { useContext, useEffect, useState } from "react";
-import { dataPovider } from "../context/FunctionalityDataProvider";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const [expanded, setExpanded] = useState(true);
@@ -17,7 +16,6 @@ export function Header() {
   const fullScreen = expanded
     ? "h-full justify-center  items-start pt-[150px]"
     : "h-[150px] md:h-[250px] flex-col";
-  // :"h-20vh flex-col";
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -54,13 +52,7 @@ export function Header() {
         </Link>
       </div>
 
-      {/* <div className="search-bar-container h-[50px]  bg-fondo"></div> */}
-
       <div className={`header-main-content flex justify-center ${hideContent}`}>
-        {/* <div className={` h-[50px]  items-center ${hideContent}`}>
-          <SearchBar />
-        </div> */}
-        {/* <SearchBar /> */}
         <Outlet />
         <Footer />
       </div>

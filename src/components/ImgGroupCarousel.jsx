@@ -24,19 +24,20 @@ export function ImgCarousel({ type }) {
     </>
   );
 }
-//Función para agrupar fotos de los productos
+
 function grupoFotos(data, temaImg) {
   if (temaImg === "plantas") {
     return (
       <>
         {data.objects.plants.map((plant) => {
           return (
-            <div
+            <Link
+              to={`/plantas/${plant.id}`}
               className="carousel-item items-center m-2 border-2 border-verde-claro shadow-md shadow-gray rounded-lg"
               key={plant.id}
             >
               <Img name={plant.img} className="w-[250px] h-full" />
-            </div>
+            </Link>
           );
         })}
       </>

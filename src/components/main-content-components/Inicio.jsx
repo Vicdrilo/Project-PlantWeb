@@ -12,7 +12,6 @@ export function Inicio() {
         >
           <h1>Plantas</h1>
         </Link>
-        {/* <ImgGroup type="plantas" /> */}
 
         <ImgCarousel type="plantas" />
       </div>
@@ -24,7 +23,7 @@ export function Inicio() {
         >
           <h1>Materiales</h1>
         </Link>
-        {/* <ImgGroup type="materiales" /> */}
+
         <ImgCarousel type="materiales" />
       </div>
     </div>
