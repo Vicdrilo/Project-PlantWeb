@@ -4,6 +4,7 @@
       {
         "id": 1,
         "name": "Aloe vera",
+        "group": "plantas",
         "type": "",
         "ranking": 10,
         "advices": "Planta siempre verde. Tallo de 1 a 2 m de alto, de unos 10 cm de grosor, aplanado. Hojas carnosas de hasta 40 a 60 cm largo y de aprox. 10 a 15 cm de ancho, aplanadas en la base, con aguijón terminal, lisas",
@@ -15,6 +16,7 @@
       {
         "id": 2,
         "name": "Bonsai ficus",
+        "group": "plantas",
         "type": "",
         "ranking": 7,
         "advices": "Es un bonsái de interior. Se trata de un árbol tropical de hoja perenne. Muy apreciado por su gran resistencia y la emisión de raíces aéreas, que le confieren mucho carácter.",
@@ -25,6 +27,7 @@
       {
         "id": 3,
         "name": "Monstera",
+        "group": "plantas",
         "type": "",
         "ranking": 9,
         "advices": "Planta de tallo grueso que alcanza 20 m de largo; Las hojas con muchos agujeros, grandes, correosas, brillantes, cordadas, de 20 a 90 cm de largo y de 20 a 80 cm de ancho. En plantas nuevas son pequeñas, enteras, sin lóbulos ni agujeros.",
@@ -35,6 +38,7 @@
       {
         "id": 4,
         "name": "Nepenthes",
+        "group": "plantas",
         "type": "Carnivora",
         "ranking": 3,
         "advices": "Estas plantas desarrollan hojas cuya nerviación sigue creciendo y en el extremo forman jarros llenos de líquido en los que los insectos quedarán atrapados. ",
@@ -45,6 +49,7 @@
       {
         "id": 5,
         "name": "Strelitzia",
+        "group": "plantas",
         "type": "",
         "ranking": 4,
         "advices": "Conocida coloquialmente como \"Ave del paraíso\". Planta herbácea, con forma de mata y hojas con largos pecíolos, con una altura promedio de 1,5 m y un diámetro 1,8 m. ",
@@ -55,6 +60,7 @@
       {
         "id": 6,
         "name": "Suculenta",
+        "group": "plantas",
         "type": "",
         "ranking": 5,
         "advices": "Son plantas que almacenan agua en sus hojas, tallos o raíces, lo que les permite adaptarse a ambientes áridos y sobrevivir en condiciones de sequía. Estas plantas tienen una apariencia única.",
@@ -66,6 +72,7 @@
         "id": 7,
         "name": "Venus atrapamoscas",
         "type": "Carnivora",
+        "group": "plantas",
         "ranking": 2,
         "advices": "Es una pequeña planta formada por varias hojas gruesas, de 4 a 8, que crecen a nivel de suelo formando una roseta. En los extremos de éstas, y tras un largo peciolo, se desarrollan dos lóbulos rematados con unos pequeños cilios y unidos por una especie de bisagra.",
         "img": "venus-flytrap",
@@ -77,6 +84,7 @@
       {
         "id": 1,
         "name": "Maceta de plástico 5L",
+        "group": "materiales",
         "type": "Macetas",
         "advices": "Maceta de 5L",
         "img": "plastic-pot",
@@ -85,6 +93,7 @@
       {
         "id": 2,
         "name": "Maceta de plástico 3L",
+        "group": "materiales",
         "type": "Macetas",
         "advices": "Maceta de plástico de 3L",
         "img": "plastic-pot",
@@ -93,6 +102,7 @@
       {
         "id": 3,
         "name": "Maceta de barro",
+        "group": "materiales",
         "type": "Macetas",
         "advices": "Maceta de 5L",
         "img": "mud-pot",
@@ -101,6 +111,7 @@
       {
         "id": 4,
         "name": "Maceta para bonsai",
+        "group": "materiales",
         "type": "Macetas",
         "advices": "",
         "img": "bonsai-pot",
@@ -109,6 +120,7 @@
       {
         "id": 5,
         "name": "Regadera efecto lluvia",
+        "group": "materiales",
         "type": "Regaderas",
         "advices": "Regadera de 1L",
         "img": "raining-water-can",
@@ -117,6 +129,7 @@
       {
         "id": 6,
         "name": "Regadera de plástico 2L",
+        "group": "materiales",
         "type": "Regaderas",
         "advices": "Regadera de plástico de 2L",
         "img": "water-can",
@@ -124,25 +137,28 @@
       },
       {
         "id": 7,
-        "name": "Substrato universal 3L",
-        "type": "Substrato",
-        "advices": "Substrato universal de 3L",
+        "name": "Sustrato universal 3L",
+        "group": "materiales",
+        "type": "Sustrato",
+        "advices": "Sustrato universal de 3L",
         "img": "subs-3l",
         "price": 12
       },
       {
         "id": 8,
-        "name": "Substrato universal 5L",
-        "type": "Substrato",
-        "advices": "Substrato universal de 5L",
+        "name": "Sustrato universal 5L",
+        "group": "materiales",
+        "type": "Sustrato",
+        "advices": "Sustrato universal de 5L",
         "img": "subs-5l",
         "price": 17
       },
       {
         "id": 9,
-        "name": "Substrato para bonsai 5L",
-        "type": "Substrato",
-        "advices": "Substrato universal de 5L",
+        "name": "Sustrato para bonsai 5L",
+        "group": "materiales",
+        "type": "Sustrato",
+        "advices": "Sustrato universal de 5L",
         "img": "subs-bonsai",
         "price": 14
       }

@@ -48,3 +48,7 @@ ul > a:hover {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.search-results-container {
+  z-index: 999;
+}

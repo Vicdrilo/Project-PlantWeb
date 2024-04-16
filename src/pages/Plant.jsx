@@ -24,7 +24,7 @@ export function Plant() {
             className="w-7/8 md:w-4/5 flex flex-col justify-center items-start gap-2 mt-5 mb-[50vh]"
             key={plant.id}
           >
-            <h1 className="text-start">{plant.name}</h1>
+            <h1 className="text-start text-verde">{plant.name}</h1>
             <div className="flex gap-2 pb-2">
               <div className="flex flex-col w-1/3 border-e-[2px] pe-2 border-fondo">
                 <Img
@@ -32,15 +32,15 @@ export function Plant() {
                   className="w-full h-[150px] md:h-[250px]"
                 />
                 <ul className="text-start">
-                  <li className="text-sm md:text-lg text-nowrap">
+                  <li className="text-sm md:text-lg text-verde text-nowrap">
                     Dificultad: {plant.ranking}/10
                   </li>
-                  <li className="text-sm md:text-lg text-nowrap">
+                  <li className="text-sm md:text-lg text-verde text-nowrap">
                     Votos: {plant.votes}/5
                   </li>
                 </ul>
               </div>
-              <div className="w-2/3 text-start  md:text-2xl">
+              <div className="w-2/3 text-verde text-start  md:text-2xl">
                 {plant.advices}
               </div>
             </div>

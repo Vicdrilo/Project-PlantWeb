@@ -1,6 +1,7 @@
 import { Plantas } from "../components/main-content-components/Plantas";
 import { Inicio } from "../components/main-content-components/Inicio";
-import { SearchBar } from "../components/features/SearchBar";
+import { SearchBar } from "../components/features/search-components/SearchBar";
+import { SearchResults } from "../components/features/search-components/SearchResults";
 
 export function MainContent({ type }) {
   const content = () => {
@@ -28,7 +29,9 @@ export function MainContent({ type }) {
     <div className="main-content-container w-full">
       <div className={` h-[50px]  items-center`}>
         <SearchBar />
+        {/* <SearchResults /> */}
       </div>
+
       {content()}
     </div>
   );
