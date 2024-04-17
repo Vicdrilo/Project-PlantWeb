@@ -47,33 +47,41 @@ export function SearchBar() {
   };
 
   const handleBtn = (value) => {
+    let url = "";
     objetos.map((obj) => {
       if (obj.name.toLowerCase() === value.toLowerCase()) {
-        navigate(`/${obj.group}/${obj.id}`);
+        // navigate(`/${obj.group}/${obj.id}`);
+        url = `/${obj.group}/${obj.id}`;
       }
     });
+
+    url ? navigate(url) : alert("No se ha encontrado.");
   };
 
   const [visibleList, setVisible] = useState(false);
 
   return (
     <>
-      <div className="search-container relative">
+      {/* Estilos en Header.css */}
+      <div
+        className={`search-container ${visibleList && "expanse"}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          setVisible(!visibleList);
+        }}
+      >
         <form
           onSubmit={handleSubmit((data) => {
             console.log(data);
             handleBtn(data);
           })}
           onKeyDown={(e) => {
-            if (e.code === "Enter") {
-              console.log("KEYDOWN: ", e.code === "Enter");
-
-              console.log("KEYDOWN: ", inputValue);
+            if (e.key === "Enter") {
               handleBtn(inputValue);
               setResults([]);
             }
           }}
-          className={`h-[40px] w-full flex items-center mt-1`}
+          className={`h-[40px] md:h-[50px] w-full flex items-center mt-1`}
         >
           <label
             htmlFor="search"
@@ -82,14 +90,13 @@ export function SearchBar() {
             <input
               name="search"
               type="text"
-              className={`grow cursor-text placeholder-verde`}
+              className={`grow cursor-text placeholder-verde md:text-2xl`}
               placeholder="Search"
               {...register("search", { required: true })}
               onChange={(e) => handleOnChange(e.target.value)}
-              onFocus={() => setVisible(true)}
-              onBlur={() => {
-                setVisible(false);
-                // setResults([]);
+              onClick={(e) => {
+                e.stopPropagation();
+                setVisible(true);
               }}
             />
             <button
@@ -102,9 +109,12 @@ export function SearchBar() {
           </label>
         </form>
         <div
-          className={`search-results-container absolute w-full bg-verde-claro shadow-sm mt-2 p-2 ${
-            !visibleList && "hidden"
-          }`}
+          // Estilos en Header.css
+          className={`${
+            results.length > 0 && visibleList
+              ? "search-results-container"
+              : "search-results-container-none"
+          } absolute w-full bg-verde-claro shadow-sm p-3`}
         >
           <SearchResults />
         </div>

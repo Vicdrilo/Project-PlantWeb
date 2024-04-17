@@ -1,7 +1,8 @@
 import { Plantas } from "../components/main-content-components/Plantas";
 import { Inicio } from "../components/main-content-components/Inicio";
-import { SearchBar } from "../components/features/search-components/SearchBar";
-import { SearchResults } from "../components/features/search-components/SearchResults";
+// import { SearchBar } from "../components/features/search-components/SearchBar";
+import { SearchBar } from "../components/features/search-components/SearchBarV2";
+//import { SearchResults } from "../components/features/search-components/SearchResults";
 
 export function MainContent({ type }) {
   const content = () => {
