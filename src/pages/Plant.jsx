@@ -1,20 +1,14 @@
 import { useContext } from "react";
 import { Img } from "../components/features/Img";
 import { useAuthUser } from "../context/AuthProvider";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { dataPovider } from "../context/FunctionalityDataProvider";
+import comeBack from "../assets/icons/come-back-arrow.svg";
 
 export function Plant() {
   const { data } = useContext(dataPovider);
   const { plantaId } = useParams();
-
-  // console.log(data.objects.plants);
-  // data.objects.plants.map((plant) => {
-  //   // console.log(plant.id === parseInt(plantaId));
-  //   if (plant.id === parseInt(plantaId)) {
-  //     console.log(plant);
-  //   }
-  // });
+  const navigate = useNavigate();
 
   const planta = data.objects.plants.map((plant) => {
     if (plant.id === parseInt(plantaId)) {
@@ -24,6 +18,16 @@ export function Plant() {
             className="w-7/8 md:w-4/5 flex flex-col justify-center items-start gap-2 mt-5 mb-[50vh]"
             key={plant.id}
           >
+            <div className="flex justify-start items-center text-sm gap-1">
+              <div
+                className="rounded-full w-auto h-auto bg-verde"
+                onClick={() => navigate("/plantas")}
+              >
+                <img src={comeBack} alt="comeBack" />
+              </div>
+
+              <p>Plantas</p>
+            </div>
             <h1 className="text-start text-verde">{plant.name}</h1>
             <div className="flex gap-2 pb-2">
               <div className="flex flex-col w-1/3 border-e-[2px] pe-2 border-fondo">
