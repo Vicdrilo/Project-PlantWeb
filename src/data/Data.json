@@ -92,11 +92,11 @@
       },
       {
         "id": 2,
-        "name": "Maceta de plástico 3L",
+        "name": "Maceta de madera 3L",
         "group": "materiales",
         "type": "Macetas",
-        "advices": "Maceta de plástico de 3L",
-        "img": "plastic-pot",
+        "advices": "Maceta de madera tratada de 3L",
+        "img": "wood-pot",
         "price": 4
       },
       {

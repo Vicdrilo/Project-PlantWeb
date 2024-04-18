@@ -10,7 +10,7 @@ export function SearchResults() {
       <Link
         key={index}
         to={`/${obj.group}/${obj.id}`}
-        className="text-verde md:text-2xl"
+        className="text-verde md:text-2xl hover:text-verde active:text-verde"
         onClick={() => {
           setResults([]);
         }}

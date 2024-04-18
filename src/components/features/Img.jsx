@@ -11,6 +11,7 @@ import venus from "../../assets/plantas/venus-flytrap.jpg";
 import bonsaiPot from "../../assets/materiales/bonsai-pot.jpg";
 import mudPot from "../../assets/materiales/mud-pot.jpg";
 import plasticPot from "../../assets/materiales/plastic-pot.jpg";
+import woodPot from "../../assets/materiales/wood-pot.jpg";
 import rainCan from "../../assets/materiales/raining-water-can.jpg";
 import can from "../../assets/materiales/water-can.jpg";
 import subs3 from "../../assets/materiales/subs-3l.jpg";
@@ -27,40 +28,30 @@ export function Img({ name, className }) {
     </>
   );
 }
-
+//Se puede eliminar el fondo de las imagenes que lo tengan blanco con mix-blend-multiply de css
 function getImg(name, styles) {
   switch (name) {
     //Imagenes de plantas
     case "aloe":
-      return (
-        <img
-          src={aloe}
-          alt="aloe"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
-      );
+      return <img src={aloe} alt="aloe" className={`rounded-lg ${styles}`} />;
     case "ficus-bonsai":
       return (
         <img
           src={ficusBonsai}
           alt="ficusBonsai"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
+          className={`rounded-lg ${styles}`}
         />
       );
     case "monstera":
       return (
-        <img
-          src={monstera}
-          alt="monstera"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
+        <img src={monstera} alt="monstera" className={`rounded-lg ${styles}`} />
       );
     case "nepenthes":
       return (
         <img
           src={nepenthes}
           alt="nepenthes"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
+          className={`rounded-lg ${styles}`}
         />
       );
     case "strelitzia-1":
@@ -68,7 +59,7 @@ function getImg(name, styles) {
         <img
           src={strelitzia}
           alt="strelitzia"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
+          className={`rounded-lg ${styles}`}
         />
       );
     case "suculenta":
@@ -76,33 +67,23 @@ function getImg(name, styles) {
         <img
           src={suculenta}
           alt="suculenta"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
+          className={`rounded-lg ${styles}`}
         />
       );
     case "venus-flytrap":
-      return (
-        <img
-          src={venus}
-          alt="venus"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
-      );
+      return <img src={venus} alt="venus" className={`rounded-lg ${styles}`} />;
 
     //Imagenes de materiales
     case "bonsai-pot":
       return (
-        <img
-          src={bonsaiPot}
-          alt="aloe"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
+        <img src={bonsaiPot} alt="aloe" className={`rounded-lg ${styles}`} />
       );
     case "mud-pot":
       return (
         <img
           src={mudPot}
           alt="ficusBonsai"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
+          className={`rounded-lg ${styles}`}
         />
       );
     case "plastic-pot":
@@ -110,48 +91,30 @@ function getImg(name, styles) {
         <img
           src={plasticPot}
           alt="monstera"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
+          className={`rounded-lg ${styles}`}
         />
+      );
+    case "wood-pot":
+      return (
+        <img src={woodPot} alt="monstera" className={`rounded-lg ${styles}`} />
       );
     case "raining-water-can":
       return (
-        <img
-          src={rainCan}
-          alt="nepenthes"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
+        <img src={rainCan} alt="nepenthes" className={`rounded-lg ${styles}`} />
       );
     case "water-can":
       return (
-        <img
-          src={can}
-          alt="strelitzia"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
+        <img src={can} alt="strelitzia" className={`rounded-lg ${styles}`} />
       );
     case "subs-3l":
       return (
-        <img
-          src={subs3}
-          alt="suculenta"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
+        <img src={subs3} alt="suculenta" className={`rounded-lg ${styles}`} />
       );
     case "subs-5l":
-      return (
-        <img
-          src={subs5}
-          alt="venus"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
-      );
+      return <img src={subs5} alt="venus" className={`rounded-lg ${styles}`} />;
     case "subs-bonsai":
       return (
-        <img
-          src={subsBonsai}
-          alt="venus"
-          className={`rounded-lg mix-blend-multiply ${styles}`}
-        />
+        <img src={subsBonsai} alt="venus" className={`rounded-lg ${styles}`} />
       );
   }
 }

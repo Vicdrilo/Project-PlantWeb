@@ -26,7 +26,7 @@ export function Plant() {
                 <img src={comeBack} alt="comeBack" />
               </div>
 
-              <p>Plantas</p>
+              <p className="text-verde">Plantas</p>
             </div>
             <h1 className="text-start text-verde">{plant.name}</h1>
             <div className="flex gap-2 pb-2">

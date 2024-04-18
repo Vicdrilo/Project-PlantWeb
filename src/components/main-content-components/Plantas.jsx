@@ -16,7 +16,7 @@ export function Plantas() {
           <img src={comeBack} alt="comeBack" />
         </div>
 
-        <p>Inicio</p>
+        <p className="text-verde">Inicio</p>
       </div>
       <h1 className="text-start mb-5 text-verde">Plantas</h1>
 
