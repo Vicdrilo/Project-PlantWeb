@@ -24,9 +24,11 @@ Proyecto de una página web que contenga información y consejos sobre las plant
 
 ## Sobre el proyecto
 
-Hoy en día cuánta gente hay que no se atreve a cuidar de una planta porque se le muere? O quizás haya gente que desearía decorar su hogar con plantas fáciles de cuidar... Lo que se busca con "Potting plants", es llegar a ese sector. No es tanto un e-comerce, sinó una posible guia y lugar de referencia donde preguntar y contestar a dudas, donde la comunidad pueda ayudarse mutuamente. En el futuro la idea es que se pueda convertir en una pasarela previa a la compra y adquisición de la planta deseada.
+Hoy en día, cuánta gente hay que no se atreve a cuidar de una planta porque se le muere? O quizás haya gente que desearía decorar su hogar con plantas fáciles de cuidar... Lo que se busca con "Potting plants", es llegar a ese sector. No es tanto un e-comerce, sinó una posible guia y lugar de referencia donde preguntar y contestar a dudas, donde la comunidad pueda ayudarse mutuamente. En el futuro la idea es que se pueda convertir en una pasarela previa a la compra y adquisición de la planta deseada.
 
 Potting plants representa un proyecto personal, con el que poder desarrollar el conocimiento adquirido sobre React y el desarrollo forntend de un sitio web. Además de crecer en experinecia, el poder obtener feedback de la comunidad github sería una gran ayuda.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Herramientas utilizadas
 
@@ -37,3 +39,28 @@ Potting plants representa un proyecto personal, con el que poder desarrollar el 
 - ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 - ![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)
 - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Inicio / Instalación
+
+<ol>
+    <li>
+        Clonar el repositorio de GitHub
+        ```sh
+        git clone https://github.com/Vicdrilo/Project-PlantWeb.git
+        ```
+    </li>
+    <li>
+        Instalar paquetes NPM 
+        ```sh
+        npm install
+        ```
+    </li>
+    <li>
+        Arrancar el proyecto en entorno de desarrollador
+        ```sh
+        npm run dev
+        ```
+    </li>
+</ol>
