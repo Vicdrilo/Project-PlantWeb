@@ -63,7 +63,7 @@ export function Login() {
         <div className="opacity">
           <div className="rings w-full h-[100vh] rounded-xl  my-[50px] mt-[20px]">
             <div className="login md:w-1/2 md:h-[550px] md:w-[500px]">
-              <h2>Ingreso</h2>
+              <h2 className="">Ingreso</h2>
               <form
                 onSubmit={handleSubmit((data) => {
                   handleSubmitLogin(data);

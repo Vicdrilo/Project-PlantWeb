@@ -15,10 +15,7 @@ Proyecto de una página web que contenga información y consejos sobre las plant
       </ul>
     </li>
     <li><a href="#getting-started">Inicio / Instalación</a></li>
-    <li><a href="#usage">Uso</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#contact">Contacto</a></li>
   </ol>
 </details>
 
@@ -56,3 +53,9 @@ Potting plants representa un proyecto personal, con el que poder desarrollar el 
    ```
    npm run dev
    ```
+
+## Contacto
+
+Nombre: Victor Aguado Navarro - [@Linkedin](https://www.linkedin.com/in/v%C3%ADctor-aguado-navarro-608262110/) - aguadonavarrovictor@gmail.com
+Link GitHub: [GitHub](https://github.com/Vicdrilo)
+Link del proyecto: [Repositorio GitHub](https://github.com/Vicdrilo/Project-PlantWeb.git)
