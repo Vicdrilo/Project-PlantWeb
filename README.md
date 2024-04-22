@@ -22,7 +22,7 @@ Proyecto de una página web que contenga información y consejos sobre las plant
   </ol>
 </details>
 
-##Sobre el proyecto
+## Sobre el proyecto
 
 Hoy en día cuánta gente hay que no se atreve a cuidar de una planta porque se le muere? O quizás haya gente que desearía decorar su hogar con plantas fáciles de cuidar... Lo que se busca con "Potting plants", es llegar a ese sector. No es tanto un e-comerce, sinó una posible guia y lugar de referencia donde preguntar y contestar a dudas, donde la comunidad pueda ayudarse mutuamente. En el futuro la idea es que se pueda convertir en una pasarela previa a la compra y adquisición de la planta deseada.
 
@@ -31,7 +31,7 @@ Potting plants representa un proyecto personal, con el que poder desarrollar el 
 ### Herramientas utilizadas
 
 - ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
-- [![React][React.js]][React-url]
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 - ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 - ![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
 - ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
