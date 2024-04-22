@@ -44,23 +44,15 @@ Potting plants representa un proyecto personal, con el que poder desarrollar el 
 
 ## Inicio / Instalación
 
-<ol>
-    <li>
-        Clonar el repositorio de GitHub
-        ```sh
-        git clone https://github.com/Vicdrilo/Project-PlantWeb.git
-        ```
-    </li>
-    <li>
-        Instalar paquetes NPM 
-        ```sh
-        npm install
-        ```
-    </li>
-    <li>
-        Arrancar el proyecto en entorno de desarrollador
-        ```sh
-        npm run dev
-        ```
-    </li>
-</ol>
+1. Clonar el repositorio de GitHub
+   ```
+   git clone https://github.com/Vicdrilo/Project-PlantWeb.git
+   ```
+2. Instalar paquetes NPM
+   ```
+   npm install
+   ```
+3. Arrancar el proyecto en entorno de desarrollador
+   ```
+   npm run dev
+   ```
